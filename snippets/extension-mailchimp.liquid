@@ -1,0 +1,38 @@
+{%- if settings.popup_mailchimp_show -%}
+<div id="popup-mailchimp" style="--custom-color:#919eab;background-color:{{settings.popup_mailchimp_bgc}}!important" class="bgimage-center-no-repeat p-5 style-bright popup bgimage-center-no-repeat lazyload mfp-hide{%- if settings.popup_mailchimp_sb -%}{{' '}}d-none d-sm-block{%- endif -%}"{% if settings.popup_mailchimp_bgimage != blank %}{% assign img_url = settings.popup_mailchimp_bgimage | img_url: "master" %} data-bg="{{img_url}}"{% endif %}>
+  
+  <div class="d-flex flex-column align-items-end">
+    {%- capture mailchimpHeading -%}{{'general.mailchimp_popup.heading_html' | t}}{%- endcapture -%}
+    {%- if mailchimpHeading != '' -%}
+    <h4 style="color:{{settings.popup_mailchimp_color_head}}">{{mailchimpHeading}}</h4>
+    {%- endif -%}
+    {%- capture mailchimpContent -%}{{'general.mailchimp_popup.content_html' | t}}{%- endcapture -%}
+    {%- if mailchimpContent != '' -%}
+    <div class="content" style="color:{{settings.popup_mailchimp_color_cap}}">{{mailchimpContent}}</div>
+    {%- endif -%}
+    <form id="mc-form"{% if settings.popup_mailchimp_width >= 750 %} style="--pcol:45%;--pmcol:100%;"{% endif %} class="pb-0 newsletter d-flex flex-wrap{% if settings.popup_mailchimp_width >= 750 %} col-p{% else %} col-p-100{% endif %}" action="{{settings.popup_mailchimp_action}}" method="post" name="mc-embedded-subscribe-form" target="_blank">
+      <input id="mc-email" class="email mr-2" type="email" name="EMAIL" placeholder="{{'general.mailchimp_popup.enter_your_email' | t}}" required="required" style="flex:1 1 auto"/>
+      <button id="mc-submit" class="btn subscribe" type="submit" {% if settings.newsletter_terms and settings.newsletter_terms_page != blank %}disabled{% endif %} style="flex:0 0 auto">{{'general.mailchimp_popup.join_us' | t}}</button>
+      <label for="mc-email" class="col-p-100"></label>
+      {% if settings.newsletter_terms and settings.newsletter_terms_page != blank %}
+      {% assign newsletter_terms_page = '/pages/' | append: settings.newsletter_terms_page %}
+      <div class="newsletter-terms-conditions custom-color">
+        <label class="d-flex align-items-center">
+          <input type="checkbox" class="newsletter-terms mr-2" />
+          <span>{{ 'cart.general.terms_conditions_html' | t : terms_conditions_url: "/policies/terms-of-service" ,  privacy_policy_url: "/policies/privacy-policy" }}</span>
+        </label>
+      </div>
+      {% endif %}
+    </form>
+  </div>
+  
+  {%- if settings.popup_mailchimp_expire == '0' -%}
+  <div class="dont-show-label custom-color">
+    <label class="d-flex align-items-center">
+      <input type="checkbox" class="dont-show-me mr-1" />
+      <span>{{'general.mailchimp_popup.dont_show_again' | t}}</span>
+    </label>
+  </div>
+  {%- endif -%}
+</div>
+{%- endif -%}

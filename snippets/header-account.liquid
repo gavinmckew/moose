@@ -1,0 +1,16 @@
+<a href="/account" class="block-{{block.id}} my-account header-icon mx-1 d-flex justify-content-center align-items-center {% if block.settings.icon_type == 'rounded_border' %}with-border is-rounded{% else %}h-auto flex-column w-auto{% endif %}"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#global__symbols--profile"></use></svg>
+{%- if block.settings.icon_type == 'with_text' -%}
+<span class="h6 pt-2 text--inactive">{{ 'general.top.my_account' | t | upcase }}</span>
+{%- endif -%}
+</a>
+{%- capture style_sheet_block -%}
+{%- if block.settings.icon_color != blank and block.settings.icon_color != 'rgba(0,0,0,0)' -%}
+.block-{{block.id}}.my-account{
+  color:{{block.settings.icon_color}};
+}
+.block-{{block.id}}.my-account:hover {
+  color:{{block.settings.icon_color | color_darken: 30 }};
+}
+{%- endif -%}
+{%- endcapture -%}
+{% assign style_sheet = style_sheet| append: style_sheet_block %}
