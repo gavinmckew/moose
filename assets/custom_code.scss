@@ -102,4 +102,5 @@
     z-index: 3;
     grid-area: optiondesc;
   }
-}
+
+.search-bar__input { background-color: transparent; border-radius: 50px; color: $color-text; border-color: transparent; padding-right: calc(35em / 16); width: 100%; min-height: 44px;
