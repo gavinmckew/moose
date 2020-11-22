@@ -34,19 +34,19 @@
     "color_body_bg": "#ffffff",
     "color_content_bg": "#ffffff",
     "color_label_general": "#ffffff",
-    "color_label_general_bg": "#d9121f",
+    "color_label_general_bg": "#d95911",
     "color_label_sale": "#ffffff",
     "color_label_sale_bg": "#ea9507",
     "color_label_new": "#ffffff",
     "color_label_new_bg": "#1349b2",
-    "color_ratingstar_checked": "#d91320",
+    "color_ratingstar_checked": "#d96c14",
     "color_ratingstar_unchecked": "#cccccc",
     "breadcrumb_background_color": "#f2f2f2",
     "breadcrumb_links_color": "#9e9e9e",
     "mb_toolbar_color": "#ffffff",
     "mb_toolbar_bg": "#000000",
     "mb_toolbar_cart_color": "#ffffff",
-    "mb_toolbar_cart_bg": "#d9121f",
+    "mb_toolbar_cart_bg": "#d96c14",
     "multiple_currencies_used": true,
     "currency_flag": true,
     "currency_auto_switch": true,
@@ -6381,6 +6381,25 @@
           "has_padding_smallscreen": false,
           "hori_scroll_mobile": false
         }
+      },
+      "1606049347e5b63c59": {
+        "type": "custom_widget",
+        "disabled": true,
+        "blocks": {
+          "1606049347e5b63c59-0": {
+            "type": "custom_html",
+            "settings": {
+              "html_content": "<div style=\"text-align: center;\"><h1>Put your HTML here<\/h1><\/div>"
+            }
+          }
+        },
+        "block_order": [
+          "1606049347e5b63c59-0"
+        ],
+        "settings": {
+          "has_container": true,
+          "visible_on_mobile": true
+        }
       }
     },
     "content_for_index": [
@@ -6396,7 +6415,8 @@
       "16055712140c18b1a6",
       "16057108321d1f4fdc",
       "16057397123f10603b",
-      "1605799273b51e0d25"
+      "1605799273b51e0d25",
+      "1606049347e5b63c59"
     ]
   }
 }
