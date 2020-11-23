@@ -4926,6 +4926,7 @@
       },
       "16055712140c18b1a6": {
         "type": "creative-builder",
+        "disabled": true,
         "blocks": {
           "16055712140c18b1a6-0": {
             "type": "banner",
@@ -6384,12 +6385,11 @@
       },
       "1606049347e5b63c59": {
         "type": "custom_widget",
-        "disabled": true,
         "blocks": {
           "1606049347e5b63c59-0": {
             "type": "custom_html",
             "settings": {
-              "html_content": "<div style=\"text-align: center;\"><h1>Put your HTML here<\/h1><\/div>"
+              "html_content": "<div class=\"klaviyo-form-YfgnEt\"><\/div>"
             }
           }
         },
