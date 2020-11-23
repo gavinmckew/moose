@@ -46,7 +46,7 @@
   .col-p-0{display:none}.col-p-100{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.col-p{-webkit-box-flex:0;-ms-flex:0 0 var(--pcol);flex:0 0 var(--pcol);max-width:var(--pcol)}@media (max-width:767px){.col-pm-0{display:none!important}.col-pm-100{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.col-p{-webkit-box-flex:0;-ms-flex:0 0 var(--pmcol,var(--pcol));flex:0 0 var(--pmcol,var(--pcol));max-width:var(--pmcol,var(--pcol))}}</style>
   {%- include 'shopify-head' -%}
   {{ content_for_header }}
- </head>
+  {{ 'customized-styles.css' | asset_url | stylesheet_tag }}  </head>
 
 
 {% capture body_class %}

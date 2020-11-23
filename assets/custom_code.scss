@@ -104,3 +104,36 @@
   }
 
 .search-bar__input { background-color: transparent; border-radius: 50px; color: $color-text; border-color: transparent; padding-right: calc(35em / 16); width: 100%; min-height: 44px;
+  }
+   .post-thumbnail,
+ .post-thumbnail img,
+ .post-thumbnail .sh-ratio-content,
+ .post-switch-item,
+ .sh-widget-instagram-item img,
+ .sh-widget-instagram-item-overlay,
+ .sh-read-later-thumbnail,
+ .sh-read-later-thumbnail:after,
+ .sh-overlay-style1,
+ .sh-comment-form,
+ .post-media-play-overlay,
+ .post-media-play-overlay:after,
+ .post-quote-link .sh-ratio-content,
+ .post-gallery-list,
+ .post-gallery-list .slick-list,
+ .post-switch-item:after,
+ .widget_facebook iframe,
+ .sh-widget-facebook-overlay,
+ .sh-widget-posts-slider-thumbnail,
+ .sh-widget-posts-slider-group-style2,
+ .sh-widget-posts-slider-group-style2 .slick-list.draggable,
+ .post-content-review-details,
+ .post-content-review-progressbar-graph,
+ .post-content-review-progressbar-graph-fill,
+ .sh-post-author,
+ .post-content-share .jssocials-share,
+ .sh-comment-form input,
+ .sh-comment-form textarea,
+ .post-content img,
+ .sh-widget-facebook-item {
+ 	border-radius: 0 !important;
+ }
