@@ -23,3 +23,20 @@ span.total_count_ajax {
 ul.megamenu>li>a{
 	padding-bottom: 4px;
 }
+/*#creative-builder-160571039686e21dc6 .h3{
+	color: #fff;
+}*/
+.social_widget.totop.right {
+    display: none;
+}
+.header__element input {
+    border-radius: 20px;
+}
+#footer-wrapper .creative-builder > div {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+div#cb-item-3ea22b2f-b7f8-4103-9b05-757e4cef96a7 {
+    width: 100vw;
+    padding: 0 !important;
+}

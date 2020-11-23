@@ -91,6 +91,11 @@
                     {%-if block.settings.cta_text == blank and block.settings.linklist_enabled == false-%}
                     </a>{%-else-%}
                     </div>{%-endif-%}
+                    <style>
+                       #creative-builder-{{section.id}} .h3.custom-font-size{
+                            color: {{section.settings.underline_color}};
+                        }
+                    </style>
                 </div>
                         
                 {%- when 'promotion' -%}

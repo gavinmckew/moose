@@ -1,7 +1,7 @@
 {%- if section.blocks.size > 0 -%}
 {%- assign li_w_arr = 'auto,100%,50%,33.3%,25%,20%' | split: ',' -%}
 {%- capture section_class -%}
-{% if section.settings.has_container %}container px-3 px-sm-0{% endif %} py-5
+{% if section.settings.has_container %}container px-3 px-sm-0{% endif %} px-31 py-5
 {%- endcapture -%}
 <footer id="footer" data-section-id="{{ section.id }}" data-section-type="footer" style="background-color:{{section.settings.color_bg}};">
     <div id="footer-wrapper" class="{{section_class}}">
