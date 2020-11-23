@@ -103,7 +103,7 @@
     grid-area: optiondesc;
   }
 
-.search-bar__input { background-color: transparent; border-radius: 50px; color: $color-text; border-color: transparent; padding-right: calc(35em / 16); width: 100%; min-height: 44px;
+.search-bar__input { background-color: transparent; border-radius:0px; color: $color-text; border-color: transparent; padding-right: calc(35em / 16); width: 100%; min-height: 44px;
   }
    .post-thumbnail,
  .post-thumbnail img,
@@ -113,12 +113,13 @@
  .sh-widget-instagram-item-overlay,
  .sh-read-later-thumbnail,
  .sh-read-later-thumbnail:after,
- .sh-overlay-style1,
+ .sh-overlay-style1,   {
+  border-radius: 10px/30px; /* horizontal radius / vertical radius */
+}
  .sh-comment-form,
  .post-media-play-overlay,
  .post-media-play-overlay:after,
  .post-quote-link .sh-ratio-content,
- .post-gallery-list,
  .post-gallery-list .slick-list,
  .post-switch-item:after,
  .widget_facebook iframe,
@@ -136,4 +137,9 @@
  .post-content img,
  .sh-widget-facebook-item {
  	border-radius: 0 !important;
+ .checkout-box-item - 
  }
+  
+  {
+  border-radius: 10px/30px; /* horizontal radius / vertical radius */
+}
