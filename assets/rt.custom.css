@@ -13,3 +13,13 @@
 span.total_count_ajax {
     font-size: 12px;
 }
+[data-section-type="header-elements"] > div + div {
+        background: #413b3b;
+    border-top: 0 !important;
+}
+.social_widget.totop .icon{
+	background-color: #e74a03;
+}
+ul.megamenu>li>a{
+	padding-bottom: 4px;
+}
