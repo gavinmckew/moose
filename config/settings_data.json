@@ -4712,47 +4712,20 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "1602764001856": {
-            "type": "social",
+          "ab2480f9-c0d1-4403-b81d-6360dbe6af95": {
+            "type": "footer-top",
             "settings": {
-              "width": 30,
+              "width": 25,
               "width_mobile": 100,
-              "right_align": false,
-              "content_align": "justify-content-start",
-              "has_padding": false,
               "twitter": true,
               "facebook": true,
               "linkedin": false,
               "vimeo": false,
               "youtube": true,
               "social_size": 24,
-              "color_social": "#e74a03"
-            }
-          },
-          "011641f7-a94b-4992-a8ee-d8b639c5e3ed": {
-            "type": "image",
-            "settings": {
-              "width": 15,
-              "width_mobile": 50,
-              "right_align": true,
-              "has_padding": false,
-              "image": "shopify:\/\/shop_images\/payment1s.png",
-              "linked_url": "shopify:\/\/collections\/all",
-              "fadeoff": false,
-              "image_pos": "column",
-              "text": "",
-              "text_align": "text-right",
-              "text_color": "#000000",
-              "text_size": 18,
-              "text_weight": 400,
-              "border_top": false,
-              "border_bottom": false,
-              "border_left": false,
-              "border_right": false,
-              "mobile_border_top": false,
-              "mobile_border_bottom": false,
-              "mobile_border_left": false,
-              "mobile_border_right": false
+              "color_social": "#e74a03",
+              "payment_logo": "shopify:\/\/shop_images\/payment1s.png",
+              "link": "shopify:\/\/collections\/all"
             }
           },
           "c68bd1e1-0940-4212-be05-ccdd2c1fd1c8": {
@@ -4834,45 +4807,25 @@
               "content_align": "justify-content-start"
             }
           },
-          "3ea22b2f-b7f8-4103-9b05-757e4cef96a7": {
-            "type": "image",
+          "e951adcd-d614-40f9-adff-118577546794": {
+            "type": "footer-bottom",
             "settings": {
-              "width": 100,
-              "width_mobile": 100,
-              "right_align": false,
-              "has_padding": false,
-              "image": "shopify:\/\/shop_images\/Untitled-1.jpg",
-              "linked_url": "shopify:\/\/collections\/all",
-              "fadeoff": false,
-              "image_pos": "column-reverse",
-              "text": "",
-              "text_align": "text-center",
-              "text_color": "#000000",
-              "text_size": 18,
-              "text_weight": 400,
-              "border_top": false,
-              "border_bottom": false,
-              "border_left": false,
-              "border_right": false,
-              "mobile_border_top": false,
-              "mobile_border_bottom": false,
-              "mobile_border_left": false,
-              "mobile_border_right": false
+              "image": "shopify:\/\/shop_images\/logo_2f1234b2-62db-47e6-bb24-3d331f949942.png",
+              "copyright": "Moose Marketplace © 2020"
             }
           }
         },
         "block_order": [
-          "1602764001856",
-          "011641f7-a94b-4992-a8ee-d8b639c5e3ed",
+          "ab2480f9-c0d1-4403-b81d-6360dbe6af95",
           "c68bd1e1-0940-4212-be05-ccdd2c1fd1c8",
           "1602692925992",
           "1602694397965",
           "1602776478387",
           "dc747dc7-b6ea-4045-9192-a62cee1f6794",
-          "3ea22b2f-b7f8-4103-9b05-757e4cef96a7"
+          "e951adcd-d614-40f9-adff-118577546794"
         ],
         "settings": {
-          "has_container": false,
+          "has_container": true,
           "has_padding": true,
           "color_bg": "#f2f2f2"
         }

@@ -1,9 +1,51 @@
 {%- if section.blocks.size > 0 -%}
 {%- assign li_w_arr = 'auto,100%,50%,33.3%,25%,20%' | split: ',' -%}
 {%- capture section_class -%}
-{% if section.settings.has_container %}container px-3 px-sm-0{% endif %} px-31 py-5
+{% if section.settings.has_container %}container px-3 px-sm-0{% endif %} px-3 py-52
 {%- endcapture -%}
 <footer id="footer" data-section-id="{{ section.id }}" data-section-type="footer" style="background-color:{{section.settings.color_bg}};">
+    <div id="footer-top" class=" ">
+        <div class="{{section_class}} px-3 py-4">
+            <div class="creative-builder">
+            {%- for block in section.blocks -%}
+                 {% capture block_class %}cb-item{% if block.settings.has_padding %} p-1{% endif %}{% if slider_mode == true %} splide__slide{% else %} col-p{% endif %}{% endcapture %}
+                    {% capture block_pcol_css %}--pcol:{{block.settings.width}}%;--pmcol:{{block.settings.width_mobile}}%;{% endcapture %}
+                    {% capture block_id %}cb-item-{{block.id}}{% endcapture %}
+                    {% capture border_class %}
+                    {% if block.settings.border_top %} border-top-md{% endif %}{% if block.settings.border_bottom %} border-bottom-md{% endif %}{% if block.settings.border_left %} border-left-md{% endif %}{% if block.settings.border_right %} border-right-md{% endif %}{% if block.settings.mobile_border_top %} border-top-xs-only{% endif %}{% if block.settings.mobile_border_bottom %} border-bottom-xs-only{% endif %}{% if block.settings.mobile_border_left %} border-left-xs-only{% endif %}{% if block.settings.mobile_border_right %} border-right-xs-only{% endif %}{% endcapture %}
+
+                 {%- case block.type -%}
+                    {%- when 'footer-top' -%}
+                    <div id="cb-item-{{block.id}}" class="{{block_class}} socials{% if block.settings.right_align %} flex-child-align--right{% endif %} {{block.settings.content_align}}" style="{{block_pcol_css}}">
+                        <div class="py-2 py-md-0 d-flex custom-svg-size custom-svg-color" style="--svg-size:{{block.settings.social_size}}px;--svg-color:{{block.settings.color_social}}">
+                            {%- assign socials = 'twitter,facebook,linkedin,vimeo,youtube' | split: ',' -%}
+                            {%- for social_name in socials -%}
+                            {%- if block.settings[social_name] == true -%}
+                            {%- assign social_url_setting = 'social_icon_' | append: social_name -%}
+                            <a class="d-flex justify-content-center pr-3 pr-lg-4" href="{{settings[social_url_setting] | default: '#'}}">
+                                <svg>
+                                    <use xlink:href="#global__symbols--social-{{social_name}}" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                </svg>
+                            </a>
+                            {%- endif -%}
+                            {%- endfor -%}
+                        </div>   
+                    </div>   
+                    {% if block.settings.payment_logo != blank %}
+                    <div id="cb-item-{{block.id}}" class="{{block_class}}{{border_class}} image{% if block.settings.right_align %} flex-child-align--right{% endif %}" style="{{block_pcol_css}}">
+                        <div class="payment-link">
+                            <a href="{{block.settings.link}}">
+                            <img src="{{ block.settings.payment_logo | img_url: 'master' }}" alt="{{block.settings.payment_logo.alt}}">
+                            </a>
+                        </div> 
+                    </div> 
+                    {% endif %}   
+
+                 {%- endcase -%}
+            {%- endfor -%}
+            </div>
+        </div>
+    </div>
     <div id="footer-wrapper" class="{{section_class}}">
         <div class="cb-body col-p-100{% if section.settings.has_padding %}{% if section.settings.has_container %} p-1{% else %} py-1{% endif %}{% endif %}">
             <div class="cb-body-wrapper creative-builder">
@@ -219,6 +261,31 @@
 
                 {%- endcase -%}
                 {%- endfor -%}
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-bottom" >
+        <div class="{{section_class}} px-3 py-4">
+            <div class="creative-builder">
+            {%- for block in section.blocks -%}
+                  
+                 {%- case block.type -%}
+                    {%- when 'footer-bottom' -%}
+                    <div id="cb-item-{{block.id}}" class="{{block_class}} braningl{% if block.settings.right_align %} flex-child-align--right{% endif %} {{block.settings.content_align}}" style="">
+                        {% if block.settings.image != blank %}
+                        <div class="branding-logo">
+                            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{block.settings.payment_logo.alt}}">
+                        </div>
+                        {% endif %}   
+                        <div class="copy-right">
+                            {{block.settings.copyright}}
+                        </div>
+                    </div>   
+          
+
+                 {%- endcase -%}
+            {%- endfor -%}
             </div>
         </div>
     </div>
@@ -1601,6 +1668,118 @@
                         }
                     ],
                     "default": "justify-content-start"
+                }
+            ]
+        },
+        {
+            "type": "footer-top",
+            "name": "Footer Top",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Left column"
+                },
+                {
+                    "type": "range",
+                    "id": "width",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Width",
+                    "default": 100
+                },
+                {
+                    "type": "range",
+                    "id": "width_mobile",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Mobile width",
+                    "default": 0
+                },
+                {
+                    "type": "checkbox",
+                    "id": "twitter",
+                    "label": "Twitter",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "facebook",
+                    "label": "Facebook",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "linkedin",
+                    "label": "LinkedIn",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "vimeo",
+                    "label": "Vimeo",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "youtube",
+                    "label": "Youtube",
+                    "default": true
+                },
+                {
+                    "type": "header",
+                    "content": "Styling"
+                },
+                {
+                    "type": "range",
+                    "id": "social_size",
+                    "label": "Social size",
+                    "unit": "px",
+                    "min": 20,
+                    "max": 40,
+                    "step": 1,
+                    "default": 24
+                },
+                {
+                    "type": "color",
+                    "id": "color_social",
+                    "label": "Social color",
+                    "default": "#686868"
+                },
+                {
+                    "type": "header",
+                    "content": "Right column"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "payment_logo",
+                    "label": "Payment Logo"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
+                }
+            ]
+        },
+        {
+            "type": "footer-bottom",
+            "name": "Footer Bottom",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Logo"
+                },
+                {
+                    "type": "textarea",
+                    "id": "copyright",
+                    "label": "Copyright text",
+                    "default": "Moose Marketplace © 2020",
+                    "info": "You can also use HTML here if you like."
                 }
             ]
         }

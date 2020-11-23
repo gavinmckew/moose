@@ -32,11 +32,28 @@ ul.megamenu>li>a{
 .header__element input {
     border-radius: 20px;
 }
-#footer-wrapper .creative-builder > div {
+/*#footer-wrapper .creative-builder > div {
     padding-left: 15px;
     padding-right: 15px;
 }
 div#cb-item-3ea22b2f-b7f8-4103-9b05-757e4cef96a7 {
     width: 100vw;
     padding: 0 !important;
+}*/
+div#footer-top {
+    background: #fff;
+   /* padding: 15px 3rem;*/
+}
+
+#footer-top .d-flex {
+    align-items: center;
+}
+div#footer-bottom {
+    background: #e74a03;
+    color: #fff;
+}
+.copy-right {
+    position: relative;
+    margin-top: 15px;
+    margin-left: 30px;
 }
