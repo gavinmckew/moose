@@ -4,7 +4,7 @@
     {% if block.settings.cart_count %}
     <span class="cart-count {% if block.settings.icon_type == 'rounded_border' %}on-border{% endif %} d-inline-flex justify-content-center align-items-center"><span class="total_count_ajax">{{ cart.item_count }}</span></span>
     {% endif %}
-    <div class="cart-icon header-icon mx-1 d-flex justify-content-center align-items-center {% if block.settings.icon_type == 'rounded_border' %}with-border is-rounded{% else %}h-auto flex-column w-auto{% endif %}">
+    <div class="cart-icon header-icon mx-1 d-flex justify-content-center align-items-center {% if block.settings.icon_type == 'rounded_border' %}with-border1 is-rounded1{% else %}h-auto flex-column w-auto{% endif %}">
       {%- include "cart-icon" -%}
       {%- if block.settings.icon_type == 'with_text' -%}
       <span class="h6 pt-2 text--inactive">{{ 'general.cart_info.cart' | t | upcase }}</span>

@@ -1,4 +1,11 @@
-<a href="/account" class="block-{{block.id}} my-account header-icon mx-1 d-flex justify-content-center align-items-center {% if block.settings.icon_type == 'rounded_border' %}with-border is-rounded{% else %}h-auto flex-column w-auto{% endif %}"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#global__symbols--profile"></use></svg>
+<a href="/account" class="block-{{block.id}} my-account header-icon mx-1 d-flex justify-content-center align-items-center {% if block.settings.icon_type == 'rounded_border' %}with-border1 is-rounded1{% else %}h-auto flex-column w-auto{% endif %}">{% comment %}<svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#global__symbols--profile"></use></svg>{% endcomment %}
+
+	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="33" viewBox="0 0 27 33">
+  <image id="User" width="27" height="33" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAcCAYAAACK7SRjAAACX0lEQVRIiaWWzUtUYRjFz5ijWWQWZBTtdNEiyTZ9QET+B5FtW7btfxCFqEXLaGWbKIvWRQTRojCDtmEQLYLCzBobm3E0nV88dm7chjtfzoGX+859n3ve9z7POc+dHKAWMSypT9J3SV9aeiTIG4xB4AmwARSBn0AJWAJuAflGzzcingTW+YsgLwDL3iBQAd4Be9slP2BCTDYNnAdGgUvAHLDimNl2yZ+ZOE46USfmAVB2zGSr5AN+5Spwr0Haco4LvMyK6cqo8QlJq5KKkh410oKkF56PZAVkke+SlPPDK03EVvA13yr5J5PvlHSuCfmor98yV+vkc8m5/Ar01Yk55WL+Bm63o5brluCaZTdYsz7hggc2gf52TfTYbty05OatigUbKpHq1HYcGuN+ypFpVGygusSNyHuAw56PAHeA98Bn4C1wwzGxfgjoboV8CHjjVJSchtp8K0U657iqY4/UI59yv0iQ9Jay03MBOAmMAzMmJRUX+JVOVdLP90lalNRtd85Y6+OS9thQRas37vd7HiZ7KKlH0kVJuyVVzVdMTn3XqVh250vuHwWeW5IFF7fgVhzNbbhGngXrfjp98k27NXrFWIbX4qSnJe2X9EPSK0mljLhZx61L6o0dx7xjfGkuN5Fms3HFeQ++M3Ha4/42Jjt3gtfOQm/0nSjggH/E+Ngh+Qd31eA9mO6KFVe6E6xaTVtIk2e13+3gP/Jo+GuSypLOdkg8YT/EGyyGFPNOSZc3eCpp3nJqFVGvY5ZxYqQdibSu1Vi/E/xrAem/c0OSrkaVXe12sSFpQdLNrU+lpD8AdcsFXdmUNwAAAABJRU5ErkJggg=="/>
+</svg>
+
+
+
 {%- if block.settings.icon_type == 'with_text' -%}
 <span class="h6 pt-2 text--inactive">{{ 'general.top.my_account' | t | upcase }}</span>
 {%- endif -%}
