@@ -4898,7 +4898,7 @@
               "video_source": "youtube",
               "youtube_url": "https:\/\/www.youtube.com\/watch?v=yel_ax4g2cU",
               "mp4_url": "",
-              "cover_img": "shopify:\/\/shop_images\/ride-more-new.jpg",
+              "cover_img": "shopify:\/\/shop_images\/youtube-orginal-edit33.jpg",
               "ratio": "21\/9",
               "title": "",
               "heading_color": "#ffffff",
@@ -5671,7 +5671,7 @@
           "1605736721b865d8f4-0": {
             "type": "banner",
             "settings": {
-              "width": 100,
+              "width": 99,
               "width_mobile": 100,
               "height": 340,
               "mobile_height": 230,
