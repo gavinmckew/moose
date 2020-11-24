@@ -32,6 +32,21 @@ ul.megamenu>li>a{
 .header__element input {
     border-radius: 20px;
 }
+  
+  
+.product .image[class*=aspect-ratio-].aspect-ratio-crop .main-images-wrapper img {
+  border-radius: 20px;
+  background-clip: padding-box;
+  color: grey;
+  padding: 2em;
+  border-top-right-radius: 70px 50px;
+  
+}
+  
+
+  
+  
+  
 /*#footer-wrapper .creative-builder > div {
     padding-left: 15px;
     padding-right: 15px;
