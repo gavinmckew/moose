@@ -36,17 +36,19 @@ ul.megamenu>li>a{
   
 .product .image[class*=aspect-ratio-].aspect-ratio-crop .main-images-wrapper img {
   border-radius: 20px;
+  background: #e74a03
   background-clip: padding-box;
-  color: grey;
-  padding: 2em;
+  color: #413b3b;
+  padding: 3em;
   border-top-right-radius: 70px 50px;
+  
   
 }
   
   .price-new {
     font-size: 24px;
-   font-weight: bold;
-    right: 20px;
+    font-weight: bold;
+    right: 22px;
     color: #413b3b;
     padding: 30px;
     padding-top:0
@@ -59,9 +61,18 @@ ul.megamenu>li>a{
    
   }
   
+  div#name {
+    color: #413b3b;
+    
+  }
+  
   .product-item__top {
       background-clip: padding-box;
     
+  }
+  
+  div#creative-builder-16057107050148bb34 {
+    padding: 3em;
   }
   
   
