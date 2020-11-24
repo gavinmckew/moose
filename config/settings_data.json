@@ -3870,7 +3870,7 @@
               "width": 100,
               "align_right": false,
               "content_align": "justify-content-start",
-              "has_padding": true,
+              "has_padding": false,
               "border_top": false,
               "border_bottom": false,
               "border_left": false,
@@ -4650,7 +4650,7 @@
             "settings": {
               "width": 100,
               "width_mobile": 0,
-              "height": 50,
+              "height": 5,
               "mobile_height": 30,
               "color_bg": "rgba(0,0,0,0)",
               "line_thick": 0,

@@ -43,8 +43,26 @@ ul.megamenu>li>a{
   
 }
   
-
+  .price-new {
+    font-size: 24px;
+   font-weight: bold;
+    right: 20px;
+    color: #413b3b;
+    padding: 30px;
+    padding-top:0
+    
+  }
   
+ div#price d-flex flex-row-reverse {
+    
+  color: #413b3b;
+   
+  }
+  
+  .product-item__top {
+      background-clip: padding-box;
+    
+  }
   
   
 /*#footer-wrapper .creative-builder > div {
