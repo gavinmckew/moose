@@ -141,7 +141,8 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   -moz-border-radius-bottomright: 300px;
   border-top-right-radius: 300px;
   border-bottom-right-radius: 300px;
-  height: 60px; }
+  height: 60px;
+  transition: 1s all; }
 
 #creative-builder-1600746143555 .splide__arrow--prev {
   left: 0;
@@ -198,6 +199,13 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   margin-top: 50px; }
 
 /* -------------------
+/  ------- 13point banner
+/* ------------------- 
+/*/
+#cb-item-16062770415912ad43-0 .banner-content-wrapper .banner-texting.text-align-center {
+  width: 100%; }
+
+/* -------------------
 /  ------- REVIEW SLIDER
 /* ------------------- 
 /*/
@@ -226,3 +234,8 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 #creative-builder-16057909505dfd66e5 .splide__arrow--next {
   top: 60%; }
+
+.b-caption {
+  line-height: 22px !important;
+  white-space: pre-line;
+  text-align: center; }
