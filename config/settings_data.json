@@ -4425,6 +4425,25 @@
               "mi_submenu_has_padding": true,
               "mi_submenu_bg_c": "#ffffff"
             }
+          },
+          "6cfecabd-fe69-483f-acec-01266f8d57ea": {
+            "type": "submenu_linklist",
+            "settings": {
+              "mi_ct_w": 25,
+              "mi_submenu_has_padding": true,
+              "mi_submenu_bg_c": "#ffffff",
+              "mi_ct_links": "electric-scooters",
+              "mi_ct_links_col": "1",
+              "mi_ct_links_sub_visible": false,
+              "mi_ct_links_sub_col": "1",
+              "mi_ct_links_head_color": "#000000",
+              "mi_ct_links_head_border_color": "#e6e7e8",
+              "mi_ct_links_head_fontsize": 14,
+              "mi_ct_links_head_fontweight": 400,
+              "mi_ct_links_item_color": "#000000",
+              "mi_ct_links_item_fontsize": 13,
+              "mi_ct_links_item_fontweight": 400
+            }
           }
         },
         "block_order": [
@@ -4451,7 +4470,8 @@
           "1600685077774",
           "1600685160285",
           "1600685204067",
-          "1600667895365"
+          "1600667895365",
+          "6cfecabd-fe69-483f-acec-01266f8d57ea"
         ],
         "settings": {
           "mmenu_vertical": false,
@@ -6007,6 +6027,7 @@
               "cap_bgcolor_use": false,
               "cap_bgcolor": "#ffffff",
               "cta_text": "",
+              "linked_url": "shopify:\/\/collections\/all",
               "modern": false,
               "cta_color": "#ffffff",
               "cta_bgcolor": "rgba(0,0,0,0)",
