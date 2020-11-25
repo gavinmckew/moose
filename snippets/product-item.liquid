@@ -2,7 +2,7 @@
 {%- assign featured_image = current_variant.featured_media.preview_image | default:product.featured_media.preview_image -%}
 {%- assign _dim = '500x' -%}
 {%-assign _onepone = ' lazyload" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-'-%}
-<div class="product-pull-up product product-content-wrapper clearfix product-hover product-item-advanced-wrapper quickshop-type-advanced-wrapper position-relative dots{% if settings.product_countdown_show and product.metafields.info.countdown != blank %} has-countdown{% endif %}">
+<div data-aos="fade-up" class="product-pull-up product product-content-wrapper clearfix product-hover product-item-advanced-wrapper quickshop-type-advanced-wrapper position-relative dots{% if settings.product_countdown_show and product.metafields.info.countdown != blank %} has-countdown{% endif %}">
   <span class="product-item__shadow"></span>
   <div class="product-item__top">
     {%- if custom_badge == blank or custom_badge == empty -%}
@@ -20,12 +20,13 @@
     {%- else -%}
     <div class="general-label">{{custom_badge}}</div>
     {%- endif -%}
+    <div class="name"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
     {%- include 'product-item-images', my_layout: 'grid' -%}
     {%- if product.images.size > 1 -%}{%- include 'item-images' -%}{%- endif -%}
     {%- if settings.product_countdown_show -%}{%- include 'limited-offer' -%}{%- endif -%}
   </div> 
   <div class="product-item-content d-flex flex-column align-items-start justify-content-start">
-    <div class="name"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
+    
     <div class="price d-flex flex-row-reverse" data-price="{{-current_variant.price-}}">
       {%- if product.available -%}
       <span class="price-old money{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{current_variant.compare_at_price | money}}</span>

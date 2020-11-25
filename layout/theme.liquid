@@ -32,6 +32,11 @@
   <link rel="preload" as="font" href="{{ body_font | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="{{ body_font_bold | font_url }}" type="font/woff2" crossorigin>
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
   <style>
     {{ header_font | font_face: font_display: 'swap' }}
     {{ body_font | font_face: font_display: 'swap' }}
@@ -108,7 +113,7 @@
             <div class="shadow"></div>
             <div class="pattern">
               <div class="page-width">
-                
+
                 {{content_for_layout}}
                 {%- if template == 'product' -%}<div class="container px-2 pb-5">{%- if settings.product_bottom_banner -%}{%- section 'creative-builder' -%}{%- endif -%}{%- include 'product-bottom' -%}</div>{%- endif -%}
                 {%- if settings.ctemplate_type == "promo" and template contains "collection"  and template != "list-collections" -%}<div class="container px-2 pb-5">{%- section 'creative-builder' -%}</div>{%- endif -%}
@@ -152,5 +157,6 @@
   <script src="{{ 'cbpGridGallery.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script>AOS.init();</script>
 </body>
 </html>

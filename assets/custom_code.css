@@ -1,8 +1,4 @@
 /* -------------------
-/  ------- VARIABLES
-/* ------------------- 
-/*/
-/* -------------------
 /  ------- LEGACY
 /* ------------------- 
 /*/
@@ -99,9 +95,61 @@
 /  ------- NAVIGATION
 /* ------------------- 
 /*/
-.with-sub-menu:after {
-  content: '';
+ul.megamenu.modern > li.with-sub-menu > a strong:after {
+  content: '\f107';
   font-family: "fontawesome";
   color: #ff5000;
   display: inline-block;
-  margin-left: 10px; }
+  margin-left: 15px;
+  background: transparent; }
+
+/* -------------------
+/  ------- Buttons
+/* ------------------- 
+/*/
+.btn-squared {
+  border-radius: 50px !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+  transition: 1s all; }
+  .btn-squared:hover {
+    background: white;
+    color: #ff5000; }
+
+/* -------------------
+/  ------- LATEST ESCOOTERS
+/* ------------------- 
+/*/
+.bgimage-center-no-repeat {
+  background-size: 95% !important;
+  background-color: transparent !important; }
+
+/* -------------------
+/  ------- TABS
+/* ------------------- 
+/*/
+.rt-tab {
+  margin-right: 20px;
+  margin-top: 40px;
+  z-index: 99999;
+  margin-left: 3px; }
+  .rt-tab .h3 {
+    color: #4e4e4e;
+    transition: 1s all;
+    font-size: 22px; }
+    .rt-tab .h3 .border-bottom {
+      border-color: #ff5000;
+      border-width: 3px; }
+    .rt-tab .h3:hover {
+      color: #ff5000;
+      opacity: 1; }
+
+.product-item-advanced-wrapper {
+  background-color: #f6f6f6;
+  -webkit-border-radius: 50px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 50px;
+  -moz-border-radius-topleft: 0;
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  margin-top: 50px; }
