@@ -120,9 +120,52 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 /  ------- LATEST ESCOOTERS
 /* ------------------- 
 /*/
-.bgimage-center-no-repeat {
+#creative-builder-160571039686e21dc6 .bgimage-center-no-repeat {
   background-size: 95% !important;
   background-color: transparent !important; }
+
+/* -------------------
+/  ------- HOME PAGE HERO
+/* ------------------- 
+/*/
+#creative-builder-1600746143555 .splide__arrow svg {
+  color: white;
+  fill: white; }
+
+#creative-builder-1600746143555 .splide__arrow {
+  background: #ff5000 !important;
+  opacity: 1;
+  -webkit-border-top-right-radius: 300px;
+  -webkit-border-bottom-right-radius: 300px;
+  -moz-border-radius-topright: 300px;
+  -moz-border-radius-bottomright: 300px;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px;
+  height: 60px; }
+
+#creative-builder-1600746143555 .splide__arrow--prev {
+  left: 0;
+  -webkit-border-top-right-radius: 300px;
+  -webkit-border-bottom-right-radius: 300px;
+  -moz-border-radius-topright: 300px;
+  -moz-border-radius-bottomright: 300px;
+  border-top-right-radius: 300px;
+  border-bottom-right-radius: 300px; }
+
+#creative-builder-1600746143555 .splide__arrow--next {
+  right: 0;
+  -webkit-border-top-left-radius: 300px;
+  -webkit-border-bottom-left-radius: 300px;
+  -moz-border-radius-topleft: 300px;
+  -moz-border-radius-bottomleft: 300px;
+  border-top-left-radius: 300px;
+  border-bottom-left-radius: 300px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 00px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 00px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; }
 
 /* -------------------
 /  ------- TABS
@@ -153,3 +196,33 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   border-radius: 50px;
   border-top-left-radius: 0;
   margin-top: 50px; }
+
+/* -------------------
+/  ------- REVIEW SLIDER
+/* ------------------- 
+/*/
+#creative-builder-16057909505dfd66e5 .splide__arrow svg {
+  width: 2em;
+  color: white;
+  fill: white; }
+
+#creative-builder-16057909505dfd66e5 .h3 {
+  margin-top: 40px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 10px; }
+
+#creative-builder-16057909505dfd66e5 .splide__arrow {
+  width: 60px !important;
+  height: 60px;
+  right: 1em;
+  top: 40%;
+  background: #51b37f !important;
+  opacity: 1; }
+
+#creative-builder-16057909505dfd66e5 .splide__arrow--prev {
+  top: 40%;
+  left: 75.5em; }
+
+#creative-builder-16057909505dfd66e5 .splide__arrow--next {
+  top: 60%; }
