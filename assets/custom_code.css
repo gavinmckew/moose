@@ -206,6 +206,32 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   width: 100%; }
 
 /* -------------------
+/  ------- SHOP BY BRAND
+/* ------------------- 
+/*/
+#creative-builder-16057107050148bb34 .cb-body-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item {
+    flex: 1; }
+    #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item:first-child {
+      font-weight: bold; }
+    #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item img {
+      cursor: pointer;
+      transition: 1s all;
+      opacity: 1; }
+      #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item img:hover {
+        opacity: 0.7; }
+
+/* -------------------
+/  ------- VIDEO SECTION
+/* ------------------- 
+/*/
+#cb-item-16055650677fd5e170-0 {
+  border: 20px solid #ff5000; }
+
+/* -------------------
 /  ------- REVIEW SLIDER
 /* ------------------- 
 /*/
@@ -218,7 +244,13 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   margin-top: 40px;
   font-weight: 400;
   font-size: 20px;
-  margin-bottom: 10px; }
+  margin-bottom: -40px; }
+
+#creative-builder-16057909505dfd66e5 h1 {
+  margin-bottom: 30px; }
+
+#creative-builder-16057909505dfd66e5 .splide {
+  margin-bottom: 50px; }
 
 #creative-builder-16057909505dfd66e5 .splide__arrow {
   width: 60px !important;
@@ -226,14 +258,17 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   right: 1em;
   top: 40%;
   background: #51b37f !important;
-  opacity: 1; }
+  opacity: 1;
+  transition: 1s all; }
+  #creative-builder-16057909505dfd66e5 .splide__arrow:hover {
+    background: #4e4e4e; }
 
 #creative-builder-16057909505dfd66e5 .splide__arrow--prev {
-  top: 40%;
-  left: 75.5em; }
+  top: 48%;
+  left: 75.6em; }
 
 #creative-builder-16057909505dfd66e5 .splide__arrow--next {
-  top: 60%; }
+  top: 62%; }
 
 .b-caption {
   line-height: 22px !important;
