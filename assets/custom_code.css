@@ -199,11 +199,32 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   margin-top: 50px; }
 
 /* -------------------
+/  ------- SUBSCRIBE BANNER
+/* ------------------- 
+/*/
+#creative-builder-1606382769c0f15cca .h3:before {
+  content: '';
+  background: url("icons/settings.png") center center;
+  width: 50%;
+  height: 50%;
+  display: block; }
+
+#creative-builder-1606382769c0f15cca .b-caption {
+  line-height: 22px !important;
+  white-space: pre-line;
+  text-align: left; }
+
+/* -------------------
 /  ------- 13point banner
 /* ------------------- 
 /*/
 #cb-item-16062770415912ad43-0 .banner-content-wrapper .banner-texting.text-align-center {
   width: 100%; }
+
+#cb-item-16062770415912ad43-0 .b-caption {
+  line-height: 22px !important;
+  white-space: pre-line;
+  text-align: center; }
 
 /* -------------------
 /  ------- SHOP BY BRAND
@@ -222,7 +243,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
       cursor: pointer;
       transition: 1s all;
       opacity: 1;
-      max-height: 140px !important; }
+      min-width: 0% !important;
+      width: auto !important;
+      max-height: 60px !important; }
       #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item img:hover {
         opacity: 0.7; }
 
@@ -232,6 +255,10 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 /*/
 #cb-item-16055650677fd5e170-0 {
   border: 20px solid #ff5000; }
+
+#global__symbols--solid--play {
+  fill: #ff5000;
+  color: #ff5000; }
 
 /* -------------------
 /  ------- REVIEW SLIDER
@@ -271,8 +298,3 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 #creative-builder-16057909505dfd66e5 .splide__arrow--next {
   top: 62%; }
-
-.b-caption {
-  line-height: 22px !important;
-  white-space: pre-line;
-  text-align: center; }

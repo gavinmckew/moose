@@ -5375,6 +5375,31 @@
               "mobile_border_left": false,
               "mobile_border_right": false
             }
+          },
+          "950e4713-6008-47cc-82ab-d06e89703cb3": {
+            "type": "image",
+            "settings": {
+              "width": 100,
+              "width_mobile": 50,
+              "has_padding": false,
+              "image": "shopify:\/\/shop_images\/logo6.png",
+              "linked_url": "shopify:\/\/collections\/all",
+              "fadeoff": false,
+              "image_pos": "column",
+              "text": "",
+              "text_align": "text-center",
+              "text_color": "#000000",
+              "text_size": 18,
+              "text_weight": 400,
+              "border_top": false,
+              "border_bottom": false,
+              "border_left": false,
+              "border_right": false,
+              "mobile_border_top": false,
+              "mobile_border_bottom": false,
+              "mobile_border_left": false,
+              "mobile_border_right": false
+            }
           }
         },
         "block_order": [
@@ -5383,7 +5408,8 @@
           "16057107050148bb34-2",
           "16057107050148bb34-3",
           "16057107050148bb34-4",
-          "4cc70812-d999-485e-8f81-7e7ed954b5b8"
+          "4cc70812-d999-485e-8f81-7e7ed954b5b8",
+          "950e4713-6008-47cc-82ab-d06e89703cb3"
         ],
         "settings": {
           "title": "SHOP BY BRANDS",
