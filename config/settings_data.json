@@ -3504,9 +3504,9 @@
       "mobile-nav": {
         "type": "mobile-nav",
         "settings": {
-          "linklist": "",
-          "bg_color": "",
-          "content_color": "",
+          "linklist": "main-menu",
+          "bg_color": "#ff5000",
+          "content_color": "#ffffff",
           "border_color": ""
         }
       },
@@ -4810,7 +4810,7 @@
               "hori_scroll_mobile": false,
               "is_slider": false,
               "slider_items": 3,
-              "slider_items_mobile": 2,
+              "slider_items_mobile": 1,
               "slider_arrow_pos": "cent-side",
               "title": "Popular"
             }
@@ -4826,7 +4826,7 @@
               "hori_scroll_mobile": false,
               "is_slider": false,
               "slider_items": 4,
-              "slider_items_mobile": 2,
+              "slider_items_mobile": 1,
               "slider_arrow_pos": "cent-side",
               "title": "Trending"
             }
@@ -4842,7 +4842,7 @@
               "hori_scroll_mobile": false,
               "is_slider": false,
               "slider_items": 4,
-              "slider_items_mobile": 2,
+              "slider_items_mobile": 1,
               "slider_arrow_pos": "cent-side",
               "title": "Latest"
             }
@@ -4857,8 +4857,8 @@
               "limit": 8,
               "hori_scroll_mobile": false,
               "is_slider": false,
-              "slider_items": 4,
-              "slider_items_mobile": 2,
+              "slider_items": 3,
+              "slider_items_mobile": 1,
               "slider_arrow_pos": "cent-side",
               "title": "Features"
             }
@@ -4866,16 +4866,6 @@
           "1605709554d627ee85-3": {
             "type": "tab-end",
             "settings": {
-            }
-          },
-          "cad7d9e5-e8f1-4be1-8795-2c29fab127c8": {
-            "type": "tab-start",
-            "settings": {
-              "width": 100,
-              "width_mobile": 100,
-              "heading_underline": true,
-              "underline_color": "#3a3a3a",
-              "heading_center": true
             }
           }
         },
@@ -4885,8 +4875,7 @@
           "1605709554d627ee85-2",
           "77db8fef-d684-40da-bd5b-5246d44ebcb6",
           "45fca83c-c9dd-48b5-8a78-e08c9ba6c819",
-          "1605709554d627ee85-3",
-          "cad7d9e5-e8f1-4be1-8795-2c29fab127c8"
+          "1605709554d627ee85-3"
         ],
         "settings": {
           "title": "",
@@ -5377,7 +5366,7 @@
             "type": "text",
             "settings": {
               "width": 100,
-              "width_mobile": 100,
+              "width_mobile": 90,
               "has_padding": false,
               "text": "<h1>Each Review has a personal story<\/h1>",
               "color_text": "#3a3a3a",
@@ -5404,7 +5393,7 @@
               "width": 100,
               "width_mobile": 100,
               "height": 550,
-              "mobile_height": 230,
+              "mobile_height": 320,
               "has_padding": false,
               "bg_image": "shopify:\/\/shop_images\/Review-1.png",
               "color_bg": "#cccccc",
@@ -5459,7 +5448,7 @@
               "width": 100,
               "width_mobile": 100,
               "height": 550,
-              "mobile_height": 230,
+              "mobile_height": 320,
               "has_padding": false,
               "bg_image": "shopify:\/\/shop_images\/Review-2_c0e4271e-1c22-46e9-b05a-6fd34538ea1b.png",
               "color_bg": "#cccccc",
@@ -5630,7 +5619,7 @@
               "width": 50,
               "width_mobile": 100,
               "height": 360,
-              "mobile_height": 200,
+              "mobile_height": 250,
               "has_padding": false,
               "bg_image": "shopify:\/\/shop_images\/bg1.jpg",
               "color_bg": "#ff5000",
@@ -5685,7 +5674,7 @@
               "width": 50,
               "width_mobile": 100,
               "height": 400,
-              "mobile_height": 200,
+              "mobile_height": 380,
               "has_padding": false,
               "color_bg": "#ff5000",
               "pattern": 0,
@@ -5766,7 +5755,7 @@
               "width": 100,
               "width_mobile": 100,
               "height": 500,
-              "mobile_height": 230,
+              "mobile_height": 360,
               "has_padding": false,
               "bg_image": "shopify:\/\/shop_images\/signup.jpg",
               "color_bg": "#cccccc",
@@ -5930,7 +5919,7 @@
               "hori_scroll_mobile": true,
               "is_slider": false,
               "slider_items": 1,
-              "slider_items_mobile": 2,
+              "slider_items_mobile": 1,
               "slider_autoplay": false,
               "slider_interval": 2000,
               "slider_arrow_pos": "cent-side"
@@ -5940,9 +5929,9 @@
             "type": "banner",
             "settings": {
               "width": 100,
-              "width_mobile": 80,
+              "width_mobile": 91,
               "height": 420,
-              "mobile_height": 200,
+              "mobile_height": 310,
               "has_padding": false,
               "color_bg": "rgba(0,0,0,0)",
               "pattern": 0,
@@ -5953,14 +5942,14 @@
               "heading_weight": 700,
               "heading_shadow": false,
               "heading_bgcolor_use": false,
-              "heading_bgcolor": "#fff",
+              "heading_bgcolor": "#ffffff",
               "cap": "Like what you see? Explore the latest E-Scooters<br><br>\n<h3>#ridemoreforless<\/h3>",
               "cap_color": "#ffffff",
               "cap_size": 17,
               "cap_weight": 300,
               "cap_shadow": false,
               "cap_bgcolor_use": false,
-              "cap_bgcolor": "#fff",
+              "cap_bgcolor": "#ffffff",
               "cta_text": "Follow us",
               "linked_url": "http:\/\/instagram.com\/moosemarketplace",
               "modern": false,
@@ -5970,7 +5959,7 @@
               "cta_weight": 500,
               "linklist_enabled": false,
               "linklist": "",
-              "linklist_color": "#fff",
+              "linklist_color": "#ffffff",
               "linklist_size": 14,
               "linklist_weight": 400,
               "linklist_col": 2,

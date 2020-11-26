@@ -18,7 +18,7 @@
 {%- assign height = 530 -%}
 {% case section.settings.media_size %}{% when 'small' %}{%- assign height = 345 -%}{% when 'medium' %}{%- assign height = 530 -%}{% when 'large' %}{%- assign height = 720 -%}{% when 'full' %}{%- assign height = 1090 -%}{% endcase %}
 {%- assign section_id = section.id -%}
-<div id="ProductSection-{{ section.id }}"
+<div    id="ProductSection-{{ section.id }}"
      class="product-page-section{% if settings.sticky_cart == "bottom" %}{{- " wrapper-sticky-info " -}}{% endif %}{%- if settings.product_design == "sidebar" and settings.product_sidebar != "" and section.blocks.size > 0 -%}{{" product-has-sidebar"}}{%- endif -%}"
      data-variant_image_grouped="{%- if settings.variant_image_grouped -%}1{%- endif -%}"
      data-product_design="{{- settings.product_design -}}"

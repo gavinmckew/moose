@@ -3,7 +3,7 @@
 {% if section.settings.has_container %}container p-0{% endif %}
 {%- endcapture -%}
 {%- assign splide_custom_css = '--splide-arrow-size:2em;--splide-arrow-size-md:3em;--splide-arrow-bgc:#c6c6c66e;--splide-arrow-br:0;' -%}
-<div class="section-outer" style="background-color:{{section.settings.color_bg}};{% if section.settings.pattern != 0 %}{% render 'ssh-pattern', _pattern: section.settings.pattern, _fillcolor: section.settings.color_pattern %}{% endif %}">
+<div class="section-outer"     style="background-color:{{section.settings.color_bg}};{% if section.settings.pattern != 0 %}{% render 'ssh-pattern', _pattern: section.settings.pattern, _fillcolor: section.settings.color_pattern %}{% endif %}">
     <div id="creative-builder-{{section.id}}" class="{{section_class}}" data-section-id="{{ section.id }}" data-section-type="creative-builder" style="{{splide_custom_css}}">
         {%- if section.settings.title != empty and section.settings.heading_hide == false -%}
             <div class="cb-head col-p-100 pb-3 pt-4 d-flex align-items-start{% if section.settings.heading_center %} justify-content-center{% else %} justify-content-center justify-content-md-start{% endif %}{% if section.settings.has_padding %} px-1{% endif %}" style="--border-color:{{section.settings.underline_color}};--font-size-lg:{{section.settings.heading_fontsize}}px;--font-size-md:{{section.settings.heading_fontsize | times: 0.78 }}px;--font-size:25px">
@@ -155,7 +155,7 @@
                         {%- if block.settings.collection_id != empty and collections[block.settings.collection_id] != empty -%}
                         {%- assign _collection = collections[block.settings.collection_id] -%}
                         {%- for product in _collection.products limit: block.settings.limit -%}
-                            <div class="{% if block.settings.is_slider %}splide__slide p-sm-1{% else %}col-6 col-md-4 col-lg-3 p-1{% endif %}">
+                            <div class="{% if block.settings.is_slider %}splide__slide p-sm-1{% else %}col-12 col-md-4 p-1{% endif %}">
                             {%- include 'product-item' -%}
                             </div>
                         {%- endfor -%}

@@ -236,19 +236,19 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
     -moz-border-radius-topleft: 0;
     border-radius: 0px;
     border-top-left-radius: 0;
-    margin-top: 0px; }
+    margin-top: 50px; }
   .product-item-advanced-wrapper .name {
-    padding: 10px; }
+    padding: 20px 5px 0 5px; }
     .product-item-advanced-wrapper .name a {
       color: #717171 !important;
-      font-weight: 700;
+      font-weight: 900;
       font-family: 'Montserrat';
-      font-size: 20px !important;
+      font-size: 24px !important;
       transition: 1s all; }
       .product-item-advanced-wrapper .name a:hover {
         color: #ff5000 !important; }
     .product-item-advanced-wrapper .name-small {
-      padding: 10px; }
+      padding: 0 25px; }
       .product-item-advanced-wrapper .name-small a {
         color: #717171 !important;
         font-weight: 700;
@@ -258,11 +258,10 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
         .product-item-advanced-wrapper .name-small a:hover {
           color: #ff5000 !important; }
   .product-item-advanced-wrapper form {
-    width: 45%;
-    float: right;
-    padding: 10px; }
+    width: auto;
+    float: right; }
   .product-item-advanced-wrapper .short-description {
-    padding: 10px; }
+    padding: 0 25px; }
   .product-item-advanced-wrapper button {
     background: #717171;
     float: right;
@@ -271,12 +270,13 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
     .product-item-advanced-wrapper button:hover {
       background: #ff5000; }
   .product-item-advanced-wrapper .price {
-    width: 45%;
-    float: left;
-    padding: 10px; }
+    padding: 0 25px; }
+  .product-item-advanced-wrapper .price-new {
+    padding: 0 !important;
+    margin-top: 4px; }
 
 .product .image[class*=aspect-ratio-].aspect-ratio-crop .main-images-wrapper img {
-  padding: 10px;
+  padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0 !important; }
@@ -326,6 +326,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   align-items: center;
   justify-content: center;
   padding: 30px 0; }
+  @media (max-width: 800px) {
+    #creative-builder-16057107050148bb34 .cb-body-wrapper {
+      flex-direction: column; } }
   #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item {
     flex: 1; }
     #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item:first-child {

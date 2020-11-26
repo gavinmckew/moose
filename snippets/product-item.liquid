@@ -26,18 +26,16 @@
     {%- if settings.product_countdown_show -%}{%- include 'limited-offer' -%}{%- endif -%}
   </div> 
   <div class="product-item-content d-flex flex-column align-items-start justify-content-start">
-   <div class="name-small"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
-    <div class="short-description">{{ product.description | strip_html | truncatewords: 50}}</div>
-    <div class="price d-flex flex-row-reverse" data-price="{{-current_variant.price-}}">
+   <div class="name-small mt-md-2"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
+    <div class="short-description mt-md-2">{{ product.description | strip_html | truncatewords: 50}}</div>
+    <div class="price mt-md-2" data-price="{{-current_variant.price-}}">
       {%- if product.available -%}
       <span class="price-old money{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{current_variant.compare_at_price | money}}</span>
       <span class="price-new money mr-2">{{current_variant.price | money}}</span>
       {%- else -%}
       <span class="price-new money">{{current_variant.price | money}}</span>
       {%- endif -%}
-
-    </div>
-    <form class="mt-md-2" action="/cart/add" method="post" enctype="multipart/form-data">
+      <form class="" action="/cart/add" method="post" enctype="multipart/form-data">
       <input type="hidden" name="quantity" value="1" />
       <button type="submit" class="btn btn-action addtocart-item-js add-to-cart" data-loading-text="{{'products.product.loading' | t | escape}}" title="{{'products.product.add_to_cart' | t | escape}}" {% unless product.available %}disabled{% endunless %}>{% if product.available %}<i class="d-none d-md-inline-block fa fa-plus"></i>{% endif %}<span>{%- if product.available -%}{{'products.product.add_to_cart' | t | escape}}{%- else -%}{{'products.product.sold_out' | t}}{%- endif -%}</span></button>
       <select name="id" class="ProductItemSelect-{{ product.id }} variation-select no-js hide">
@@ -52,6 +50,9 @@
         {%- endfor -%}
       </select>
     </form>
+
+    </div>
+    
     {%- include "product-options-item" -%}
     {%- if settings.reviews_enable != ""-%}
     {%-render "review-item-stars", product: product-%}
