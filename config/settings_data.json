@@ -5702,24 +5702,6 @@
           "hori_scroll_mobile": true
         }
       },
-      "1606049347e5b63c59": {
-        "type": "custom_widget",
-        "blocks": {
-          "1606049347e5b63c59-0": {
-            "type": "custom_html",
-            "settings": {
-              "html_content": "<div class=\"klaviyo-form-YfgnEt\"><\/div>"
-            }
-          }
-        },
-        "block_order": [
-          "1606049347e5b63c59-0"
-        ],
-        "settings": {
-          "has_container": true,
-          "visible_on_mobile": true
-        }
-      },
       "16062770415912ad43": {
         "type": "creative-builder",
         "blocks": {
@@ -5877,8 +5859,8 @@
               "heading_weight": 700,
               "heading_shadow": false,
               "heading_bgcolor_use": false,
-              "heading_bgcolor": "#fff",
-              "cap": "Keep up to date with the latest Moose Marketplace news, <br>advice and expert insight, plus gain access to exclusive offers.",
+              "heading_bgcolor": "#ffffff",
+              "cap": "Keep up to date with the latest Moose Marketplace news, <br>advice and expert insight, plus gain access to exclusive offers.\n<div class=\"klaviyo-form-Wy2t69\"><\/div>",
               "cap_color": "#ffffff",
               "cap_size": 15,
               "cap_weight": 400,
@@ -5894,13 +5876,13 @@
               "cta_weight": 400,
               "linklist_enabled": false,
               "linklist": "",
-              "linklist_color": "#fff",
+              "linklist_color": "#ffffff",
               "linklist_size": 14,
               "linklist_weight": 400,
               "linklist_col": 2,
               "linklist_type": "left",
               "text_align": "text-align-left",
-              "side_padding_hori": 7,
+              "side_padding_hori": 18,
               "side_padding_vert": 50,
               "border_top": false,
               "border_bottom": false,
@@ -5913,13 +5895,25 @@
               "title": "Banner",
               "content_align_hori": false
             }
+          },
+          "476fa574-9627-49f2-b9cf-8b1ed82eea92": {
+            "type": "text",
+            "settings": {
+              "width": 100,
+              "width_mobile": 100,
+              "has_padding": false,
+              "text": "",
+              "color_text": "#999999",
+              "text_align": "justify-content-start"
+            }
           }
         },
         "block_order": [
-          "160638277155ef339c-0"
+          "160638277155ef339c-0",
+          "476fa574-9627-49f2-b9cf-8b1ed82eea92"
         ],
         "settings": {
-          "title": "subscribe",
+          "title": "SUBSCRIBE SECTION",
           "heading_hide": true,
           "heading_underline": false,
           "underline_color": "#3a3a3a",
@@ -5948,7 +5942,6 @@
       "16055650677fd5e170",
       "16057107050148bb34",
       "16055712140c18b1a6",
-      "1606049347e5b63c59",
       "1606382769c0f15cca"
     ]
   }
