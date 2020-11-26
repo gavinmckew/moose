@@ -202,6 +202,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 /  ------- SUBSCRIBE BANNER
 /* ------------------- 
 /*/
+#creative-builder-1606382769c0f15cca .h3 {
+  margin-top: 30px; }
+
 #creative-builder-1606382769c0f15cca .b-caption {
   line-height: 22px !important;
   white-space: pre-line;
@@ -212,6 +215,30 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 .cOsUod.cOsUod {
   padding: 0 0 15px 0 !important; }
+
+/* -------------------
+/  ------- INSTAGRAM BANNER
+/* ------------------- 
+/*/
+#cb-item-1606398862319bd440-0 {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  #cb-item-1606398862319bd440-0 .splide__arrow {
+    background: transparent !important;
+    font-size: 30px !important;
+    color: white !important;
+    fill: white !important; }
+  #cb-item-1606398862319bd440-0 .splide__slide {
+    text-align: center; }
+    #cb-item-1606398862319bd440-0 .splide__slide img {
+      vertical-align: bottom;
+      width: 60% !important;
+      min-width: 60% !important;
+      margin: 0 auto; }
+
+#cb-item-1606398862319bd440-4 .banner-content-wrapper {
+  outline: 0 !important;
+  text-align: center !important; }
 
 /* -------------------
 /  ------- 13point banner

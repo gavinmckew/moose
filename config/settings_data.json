@@ -4786,87 +4786,6 @@
           "hori_scroll_mobile": false
         }
       },
-      "16055712140c18b1a6": {
-        "type": "creative-builder",
-        "blocks": {
-          "16055712140c18b1a6-0": {
-            "type": "banner",
-            "settings": {
-              "width": 100,
-              "width_mobile": 100,
-              "height": 500,
-              "mobile_height": 230,
-              "has_padding": false,
-              "bg_image": "shopify:\/\/shop_images\/marketplace.jpg",
-              "color_bg": "#cccccc",
-              "pattern": 0,
-              "color_pattern": "#efefef",
-              "heading": "",
-              "heading_color": "#ffffff",
-              "heading_size": 100,
-              "heading_weight": 400,
-              "heading_shadow": false,
-              "heading_bgcolor_use": false,
-              "heading_bgcolor": "#ffffff",
-              "cap": "",
-              "cap_color": "#000000",
-              "cap_size": 60,
-              "cap_weight": 400,
-              "cap_shadow": false,
-              "cap_bgcolor_use": true,
-              "cap_bgcolor": "#ffffff",
-              "cta_text": "",
-              "linked_url": "shopify:\/\/collections\/all",
-              "modern": true,
-              "cta_color": "#ffffff",
-              "cta_bgcolor": "#000000",
-              "cta_size": 18,
-              "cta_weight": 400,
-              "linklist_enabled": false,
-              "linklist": "",
-              "linklist_color": "#ffffff",
-              "linklist_size": 14,
-              "linklist_weight": 400,
-              "linklist_col": 2,
-              "linklist_type": "left",
-              "text_align": "text-align-left",
-              "side_padding_hori": 0,
-              "side_padding_vert": 0,
-              "border_top": false,
-              "border_bottom": false,
-              "border_left": false,
-              "border_right": false,
-              "mobile_border_top": false,
-              "mobile_border_bottom": false,
-              "mobile_border_left": false,
-              "mobile_border_right": false,
-              "title": "Banner",
-              "content_align_hori": false
-            }
-          }
-        },
-        "block_order": [
-          "16055712140c18b1a6-0"
-        ],
-        "settings": {
-          "title": "",
-          "heading_hide": true,
-          "heading_underline": false,
-          "underline_color": "#3a3a3a",
-          "heading_center": true,
-          "heading_fontsize": 27,
-          "heading_button": "",
-          "heading_button_url": "shopify:\/\/collections\/all",
-          "has_container": true,
-          "has_padding": false,
-          "color_bg": "rgba(0,0,0,0)",
-          "pattern": 0,
-          "color_pattern": "#b9b9b9",
-          "center_content": false,
-          "has_padding_smallscreen": false,
-          "hori_scroll_mobile": false
-        }
-      },
       "1605709554d627ee85": {
         "type": "creative-builder",
         "blocks": {
@@ -5930,6 +5849,180 @@
           "has_padding_smallscreen": false,
           "hori_scroll_mobile": false
         }
+      },
+      "1606398862319bd440": {
+        "type": "creative-builder",
+        "blocks": {
+          "1606398862319bd440-0": {
+            "type": "group-start",
+            "settings": {
+              "width": 50,
+              "width_mobile": 100,
+              "hori_scroll_mobile": false,
+              "is_slider": true,
+              "slider_items": 1,
+              "slider_items_mobile": 1,
+              "slider_autoplay": false,
+              "slider_interval": 2000,
+              "slider_arrow_pos": "cent-side"
+            }
+          },
+          "151aae1c-42b5-4ff5-9bbe-94e1e46baf0a": {
+            "type": "image",
+            "settings": {
+              "width": 35,
+              "width_mobile": 0,
+              "has_padding": false,
+              "image": "shopify:\/\/shop_images\/IG1.png",
+              "linked_url": "http:\/\/instagram.com\/moosemarketplace",
+              "fadeoff": false,
+              "image_pos": "column",
+              "text": "",
+              "text_align": "text-center",
+              "text_color": "#000000",
+              "text_size": 18,
+              "text_weight": 400,
+              "border_top": false,
+              "border_bottom": false,
+              "border_left": false,
+              "border_right": false,
+              "mobile_border_top": false,
+              "mobile_border_bottom": false,
+              "mobile_border_left": false,
+              "mobile_border_right": false
+            }
+          },
+          "135d1f78-befa-4327-ac2d-611019016ab6": {
+            "type": "image",
+            "settings": {
+              "width": 100,
+              "width_mobile": 100,
+              "has_padding": false,
+              "image": "shopify:\/\/shop_images\/IG2.png",
+              "linked_url": "shopify:\/\/collections\/all",
+              "fadeoff": false,
+              "image_pos": "column",
+              "text": "",
+              "text_align": "text-center",
+              "text_color": "#000000",
+              "text_size": 18,
+              "text_weight": 400,
+              "border_top": false,
+              "border_bottom": false,
+              "border_left": false,
+              "border_right": false,
+              "mobile_border_top": false,
+              "mobile_border_bottom": false,
+              "mobile_border_left": false,
+              "mobile_border_right": false
+            }
+          },
+          "1606398862319bd440-3": {
+            "type": "group-end",
+            "settings": {
+            }
+          },
+          "1606398862319bd440-4": {
+            "type": "group-start",
+            "settings": {
+              "width": 50,
+              "width_mobile": 100,
+              "hori_scroll_mobile": true,
+              "is_slider": false,
+              "slider_items": 1,
+              "slider_items_mobile": 2,
+              "slider_autoplay": false,
+              "slider_interval": 2000,
+              "slider_arrow_pos": "cent-side"
+            }
+          },
+          "1606398862319bd440-5": {
+            "type": "banner",
+            "settings": {
+              "width": 100,
+              "width_mobile": 80,
+              "height": 420,
+              "mobile_height": 200,
+              "has_padding": false,
+              "color_bg": "rgba(0,0,0,0)",
+              "pattern": 0,
+              "color_pattern": "#efefef",
+              "heading": "@moosemarketplace",
+              "heading_color": "#ffffff",
+              "heading_size": 36,
+              "heading_weight": 700,
+              "heading_shadow": false,
+              "heading_bgcolor_use": false,
+              "heading_bgcolor": "#fff",
+              "cap": "Like what you see? Explore the latest E-Scooters<br><br>\n<h3>#ridemoreforless<\/h3>",
+              "cap_color": "#ffffff",
+              "cap_size": 17,
+              "cap_weight": 300,
+              "cap_shadow": false,
+              "cap_bgcolor_use": false,
+              "cap_bgcolor": "#fff",
+              "cta_text": "Follow us",
+              "linked_url": "http:\/\/instagram.com\/moosemarketplace",
+              "modern": false,
+              "cta_color": "#ff5000",
+              "cta_bgcolor": "#ffffff",
+              "cta_size": 15,
+              "cta_weight": 500,
+              "linklist_enabled": false,
+              "linklist": "",
+              "linklist_color": "#fff",
+              "linklist_size": 14,
+              "linklist_weight": 400,
+              "linklist_col": 2,
+              "linklist_type": "left",
+              "text_align": "text-align-center",
+              "side_padding_hori": 9,
+              "side_padding_vert": 50,
+              "border_top": false,
+              "border_bottom": false,
+              "border_left": false,
+              "border_right": false,
+              "mobile_border_top": false,
+              "mobile_border_bottom": false,
+              "mobile_border_left": false,
+              "mobile_border_right": false,
+              "title": "Banner",
+              "content_align_hori": false
+            }
+          },
+          "1606398862319bd440-7": {
+            "type": "group-end",
+            "settings": {
+            }
+          }
+        },
+        "block_order": [
+          "1606398862319bd440-0",
+          "151aae1c-42b5-4ff5-9bbe-94e1e46baf0a",
+          "135d1f78-befa-4327-ac2d-611019016ab6",
+          "1606398862319bd440-3",
+          "1606398862319bd440-4",
+          "1606398862319bd440-5",
+          "1606398862319bd440-7"
+        ],
+        "settings": {
+          "title": "INSTAGRAM",
+          "heading_hide": true,
+          "heading_underline": false,
+          "underline_color": "#3a3a3a",
+          "heading_center": true,
+          "heading_fontsize": 27,
+          "heading_button": "",
+          "heading_button_url": "shopify:\/\/collections\/all",
+          "has_container": true,
+          "has_padding": false,
+          "color_bg": "rgba(0,0,0,0)",
+          "pattern": 0,
+          "color_pattern": "#b9b9b9",
+          "center_content": true,
+          "has_padding_smallscreen": false,
+          "hori_scroll_mobile": false
+        }
       }
     },
     "content_for_index": [
@@ -5941,7 +6034,7 @@
       "1605791037edc03f60",
       "16055650677fd5e170",
       "16057107050148bb34",
-      "16055712140c18b1a6",
+      "1606398862319bd440",
       "1606382769c0f15cca"
     ]
   }
