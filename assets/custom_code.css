@@ -212,7 +212,8 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 #creative-builder-16057107050148bb34 .cb-body-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding: 30px 0; }
   #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item {
     flex: 1; }
     #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item:first-child {
@@ -220,7 +221,8 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
     #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item img {
       cursor: pointer;
       transition: 1s all;
-      opacity: 1; }
+      opacity: 1;
+      max-height: 140px !important; }
       #creative-builder-16057107050148bb34 .cb-body-wrapper .cb-item img:hover {
         opacity: 0.7; }
 

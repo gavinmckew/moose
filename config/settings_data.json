@@ -4625,14 +4625,14 @@
           "ab2480f9-c0d1-4403-b81d-6360dbe6af95": {
             "type": "footer-top",
             "settings": {
-              "width": 28,
+              "width": 20,
               "width_mobile": 100,
               "twitter": true,
               "facebook": true,
               "linkedin": false,
               "vimeo": false,
               "youtube": true,
-              "social_size": 24,
+              "social_size": 25,
               "color_social": "#e74a03",
               "payment_logo": "shopify:\/\/shop_images\/payment1s.png"
             }
@@ -5243,7 +5243,7 @@
           "1cf20c74-e1b8-4d03-ad23-74deeb8ee6b1": {
             "type": "text",
             "settings": {
-              "width": 14,
+              "width": 100,
               "width_mobile": 100,
               "has_padding": true,
               "text": "Shop by Brand",
@@ -5254,10 +5254,10 @@
           "16057107050148bb34-1": {
             "type": "image",
             "settings": {
-              "width": 14,
+              "width": 100,
               "width_mobile": 65,
               "has_padding": true,
-              "image": "shopify:\/\/shop_images\/pure-logo-removebg-preview_1.png",
+              "image": "shopify:\/\/shop_images\/logo1.png",
               "linked_url": "shopify:\/\/collections\/all",
               "fadeoff": false,
               "image_pos": "column",
@@ -5279,10 +5279,10 @@
           "16057107050148bb34-2": {
             "type": "image",
             "settings": {
-              "width": 14,
+              "width": 100,
               "width_mobile": 65,
               "has_padding": true,
-              "image": "shopify:\/\/shop_images\/razor-logo-removebg-preview_40a00371-c050-4424-9011-dc53d78c0578.png",
+              "image": "shopify:\/\/shop_images\/logo2.png",
               "linked_url": "shopify:\/\/collections\/all",
               "fadeoff": false,
               "image_pos": "column",
@@ -5304,10 +5304,10 @@
           "16057107050148bb34-3": {
             "type": "image",
             "settings": {
-              "width": 14,
+              "width": 100,
               "width_mobile": 65,
               "has_padding": true,
-              "image": "shopify:\/\/shop_images\/bird-logo-removebg-preview.png",
+              "image": "shopify:\/\/shop_images\/logo3_copy.png",
               "linked_url": "shopify:\/\/collections\/all",
               "fadeoff": false,
               "image_pos": "column",
@@ -5329,10 +5329,10 @@
           "16057107050148bb34-4": {
             "type": "image",
             "settings": {
-              "width": 14,
+              "width": 100,
               "width_mobile": 65,
               "has_padding": true,
-              "image": "shopify:\/\/shop_images\/segway-logo-removebg-preview.png",
+              "image": "shopify:\/\/shop_images\/logo4_copy.png",
               "linked_url": "shopify:\/\/collections\/all",
               "fadeoff": false,
               "image_pos": "column",
@@ -5354,10 +5354,10 @@
           "4cc70812-d999-485e-8f81-7e7ed954b5b8": {
             "type": "image",
             "settings": {
-              "width": 14,
+              "width": 100,
               "width_mobile": 50,
               "has_padding": true,
-              "image": "shopify:\/\/shop_images\/unag-logo-trans_d7397231-480d-430c-8a16-e49af120c155.png",
+              "image": "shopify:\/\/shop_images\/logo5.png",
               "linked_url": "shopify:\/\/collections\/all",
               "fadeoff": false,
               "image_pos": "column",
