@@ -4809,7 +4809,7 @@
               "limit": 8,
               "hori_scroll_mobile": false,
               "is_slider": false,
-              "slider_items": 4,
+              "slider_items": 3,
               "slider_items_mobile": 2,
               "slider_arrow_pos": "cent-side",
               "title": "Popular"

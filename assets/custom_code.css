@@ -188,16 +188,6 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
       color: #ff5000;
       opacity: 1; }
 
-.product-item-advanced-wrapper {
-  background-color: #f6f6f6;
-  -webkit-border-radius: 50px;
-  -webkit-border-top-left-radius: 0;
-  -moz-border-radius: 50px;
-  -moz-border-radius-topleft: 0;
-  border-radius: 50px;
-  border-top-left-radius: 0;
-  margin-top: 50px; }
-
 /* -------------------
 /  ------- SUBSCRIBE BANNER
 /* ------------------- 
@@ -215,6 +205,81 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 .cOsUod.cOsUod {
   padding: 0 0 15px 0 !important; }
+
+/* -------------------
+/  ------- PRODUCT CARDS
+/* ------------------- 
+/*/
+.product-item__top {
+  padding: 0 20px; }
+
+.product-pull-up .product-item__shadow {
+  display: none; }
+
+.product-item-advanced-wrapper {
+  background-color: #f6f6f6;
+  -webkit-border-radius: 50px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 50px;
+  -moz-border-radius-topleft: 0;
+  border-radius: 50px;
+  border-top-left-radius: 0;
+  margin-top: 50px;
+  transition: 1s all;
+  margin-bottom: 20px; }
+  .product-item-advanced-wrapper:hover {
+    box-shadow: none;
+    background-color: #eeeeee !important;
+    -webkit-border-radius: 0px;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius: 0px;
+    -moz-border-radius-topleft: 0;
+    border-radius: 0px;
+    border-top-left-radius: 0;
+    margin-top: 0px; }
+  .product-item-advanced-wrapper .name {
+    padding: 10px; }
+    .product-item-advanced-wrapper .name a {
+      color: #717171 !important;
+      font-weight: 700;
+      font-family: 'Montserrat';
+      font-size: 20px !important;
+      transition: 1s all; }
+      .product-item-advanced-wrapper .name a:hover {
+        color: #ff5000 !important; }
+    .product-item-advanced-wrapper .name-small {
+      padding: 10px; }
+      .product-item-advanced-wrapper .name-small a {
+        color: #717171 !important;
+        font-weight: 700;
+        font-family: 'Montserrat';
+        font-size: 18px !important;
+        transition: 1s all; }
+        .product-item-advanced-wrapper .name-small a:hover {
+          color: #ff5000 !important; }
+  .product-item-advanced-wrapper form {
+    width: 45%;
+    float: right;
+    padding: 10px; }
+  .product-item-advanced-wrapper .short-description {
+    padding: 10px; }
+  .product-item-advanced-wrapper button {
+    background: #717171;
+    float: right;
+    border-radius: 100px;
+    transition: 1s all; }
+    .product-item-advanced-wrapper button:hover {
+      background: #ff5000; }
+  .product-item-advanced-wrapper .price {
+    width: 45%;
+    float: left;
+    padding: 10px; }
+
+.product .image[class*=aspect-ratio-].aspect-ratio-crop .main-images-wrapper img {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 0 !important; }
 
 /* -------------------
 /  ------- INSTAGRAM BANNER
