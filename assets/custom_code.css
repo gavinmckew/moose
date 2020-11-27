@@ -145,7 +145,7 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 /* ------------------- 
 /*/
 .h3:hover {
-  transform: scale(1); }
+  transform: scale(1, 1) !important; }
 
 /* -------------------
 /  ------- UNDER MENU
@@ -324,8 +324,25 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   position: absolute;
   right: 20px;
   bottom: 20px; }
-  .product-item-advanced-wrapper form:hover {
-    background: #ff5000 !important; }
+  .product-item-advanced-wrapper form input {
+    z-index: 999999999;
+    cursor: pointer; }
+    .product-item-advanced-wrapper form input:hover {
+      background: #ff5000 !important; }
+
+/* -------------------
+/  ------- PRODUCT PAGE
+/* ------------------- 
+/*/
+.sticky-info-product-template {
+  display: none !important; }
+
+/* -------------------
+/  ------- COLLECTIONS PAGE
+/* ------------------- 
+/*/
+.product-filter .d-none {
+  display: none !important; }
 
 /* -------------------
 /  ------- INSTAGRAM BANNER

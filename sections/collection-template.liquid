@@ -16,7 +16,7 @@
 
 <div class="row" data-section-id="{{ section.id }}" data-section-type="collection-template" data-view="{{per_page}}">
   {%- if settings.sb_collection_placement == 'left' -%}
-  <div id="sidebar" class="col-md-3 col-sm-12{% if settings.sb_collection_mobile %} hidden-sm hidden-xs{% endif %}">
+  <div id="sidebar" class="col-md-13 col-sm-12{% if settings.sb_collection_mobile %} hidden-sm hidden-xs{% endif %}">
     {%- include 'sidebar-collection' -%}
   </div>
   {%- endif -%}

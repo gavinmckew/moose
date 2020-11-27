@@ -121,7 +121,7 @@
             <div class="pattern">
               <div class="page-width">
 
-                {{content_for_layout}}
+                {{ content_for_layout }}{% include 'sectionhub' %}
                 {%- if template == 'product' -%}<div class="container px-2 pb-5">{%- if settings.product_bottom_banner -%}{%- section 'creative-builder' -%}{%- endif -%}{%- include 'product-bottom' -%}</div>{%- endif -%}
                 {%- if settings.ctemplate_type == "promo" and template contains "collection"  and template != "list-collections" -%}<div class="container px-2 pb-5">{%- section 'creative-builder' -%}</div>{%- endif -%}
               </div>
@@ -166,5 +166,5 @@
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
   <script>AOS.init();</script>
-</body>
+<script src="{{ 'sectionhub.js' | asset_url }}" defer></script></body>
 </html>
