@@ -103,6 +103,22 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   margin-left: 15px;
   background: transparent; }
 
+.tmenu--wrap .tmenu_nav {
+  background: #414141; }
+  .tmenu--wrap .tmenu_nav a {
+    color: white !important;
+    font-weight: 400;
+    font-family: "Montserrat"; }
+  .tmenu--wrap .tmenu_nav svg {
+    fill: #ff5000; }
+
+.mobile-nav-bar {
+  background: #4e4e4e; }
+
+.mobile-nav-logo {
+  background: #ff5000 !important;
+  margin-bottom: -30px; }
+
 /* -------------------
 /  ------- Buttons
 /* ------------------- 
@@ -125,9 +141,29 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   background-color: transparent !important; }
 
 /* -------------------
+/  ------- GENERAL
+/* ------------------- 
+/*/
+.h3:hover {
+  transform: scale(1); }
+
+/* -------------------
+/  ------- UNDER MENU
+/* ------------------- 
+/*/
+#creative-builder-16064765057b2a016c {
+  height: 50px; }
+  #creative-builder-16064765057b2a016c .h3 {
+    font-size: 13px !important; }
+
+/* -------------------
 /  ------- HOME PAGE HERO
 /* ------------------- 
 /*/
+@media (max-width: 800px) {
+  #creative-builder-1600746143555 .bgimage-center-no-repeat {
+    background-size: contain !important; } }
+
 #creative-builder-1600746143555 .splide__arrow svg {
   color: white;
   fill: white; }
@@ -280,6 +316,16 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 0 !important; }
+
+.product-item-advanced-wrapper form {
+  width: auto;
+  float: right;
+  z-index: 999999999;
+  position: absolute;
+  right: 20px;
+  bottom: 20px; }
+  .product-item-advanced-wrapper form:hover {
+    background: #ff5000 !important; }
 
 /* -------------------
 /  ------- INSTAGRAM BANNER
