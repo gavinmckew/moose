@@ -344,6 +344,32 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 .product-filter .d-none {
   display: none !important; }
 
+.filter-wrap {
+  display: flex; }
+  .filter-wrap .filter {
+    flex: 1; }
+    .filter-wrap .filter select {
+      background: transparent;
+      padding: 10px;
+      color: #4e4e4e;
+      border: 0;
+      border-bottom: 2px solid #ff5000;
+      width: 90%; }
+
+.list-options {
+  padding-left: 0 !important;
+  margin-top: 30px;
+  float: right;
+  text-align: right; }
+  .list-options select {
+    background: transparent;
+    padding: 10px;
+    float: right;
+    color: #4e4e4e !important;
+    border: 0 !important;
+    border-bottom: 2px solid #4e4e4e !important;
+    width: 90% !important; }
+
 /* -------------------
 /  ------- INSTAGRAM BANNER
 /* ------------------- 

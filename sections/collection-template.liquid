@@ -14,6 +14,67 @@
 {%- assign a_tmp_url = tmp_url | split: "/" -%}
 <input class="collection-canonical_url" type="hidden" data-url="collections/{{- collection.handle -}}" data-parts="{{- a_tmp_url.size -}}" value="{{tmp_url}}">
 
+
+<div class="filter-wrap sort advanced-sortby">
+  <div class="filter">
+    <select class="coll-filter">
+      <option value="">By Tags</option>
+      {% for tag in collection.all_tags %} {% if current_tags contains tag %}
+      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+      {% else %}
+      <option value="{{ tag | handle }}">{{ tag }}</option>
+      {% endif %} {% endfor %}
+    </select>
+  </div>
+
+  <div class="filter sort advanced-sortby">
+    <select class="coll-filter">
+      <option value="">By Brand</option>
+
+      {% for product_vendor in collection.all_vendors %}
+       {% if current_tags contains product_vendor %}
+       <option value="{{ product_vendor | handle }}" selected>{{ product_vendor }}</option>
+       {% else %}
+        <option value="{{ product_vendor | handle }}">{{ product_vendor }}</option>
+       {% endif %}{% endfor %}
+    </select>
+  </div>
+</div>
+
+<script>
+  /* Product Tag Filters - Good for any number of filters on any type of collection pages */
+  const collFilters = document.querySelectorAll('.coll-filter');
+
+  if (collFilters.length > 0) {
+    collFilters.forEach((collFilter) => {
+      collFilter.addEventListener('change', function(){
+        var newTags = [];
+        collFilters.forEach((collFilter) => {
+          for(var i = 0; i <= collFilter.length-1; i++){
+            if(collFilter[i].selected == true && collFilter[i].value != "") {
+              newTags.push(collFilter[i].value);
+            }
+          }
+        });
+
+        if (newTags.length) {
+          var query = newTags.join('+');
+          window.location.href = '/collections/{{ collection.handle }}/' + query;
+        }
+        else {
+          {% if collection.handle %}
+          window.location.href = '/collections/{{ collection.handle }}';
+          {% elsif collection.products.first.type == collection.title %}
+          window.location.href = '{{ collection.title | url_for_type }}';
+          {% elsif collection.products.first.vendor == collection.title %}
+          window.location.href = '{{ collection.title | url_for_vendor }}';
+          {% endif %}
+        }
+      });
+    });
+  }
+</script>
+
 <div class="row" data-section-id="{{ section.id }}" data-section-type="collection-template" data-view="{{per_page}}">
   {%- if settings.sb_collection_placement == 'left' -%}
   <div id="sidebar" class="col-md-13 col-sm-12{% if settings.sb_collection_mobile %} hidden-sm hidden-xs{% endif %}">

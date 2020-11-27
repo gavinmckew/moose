@@ -99,7 +99,7 @@
     {%- endif-%}
   </ul>
   <div class="toolbar-right d-inline-flex">
-    <div class="list-options d-inline-flex">
+    <div class="list-options">
       <div class="sort advanced-sortby position-relative px-3 d-flex align-items-center">
          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
         <select class="field orderby filters-toolbar__input--sort font-weight-normal border-none ">
@@ -142,7 +142,7 @@
         </select>
         <input class="collection-header__default-sort" type="hidden" value="{{ collection.default_sort_by }}">
       </div>
-      <div class="limit advanced-sortby position-relative pl-3 d-flex align-items-center border-none">
+      <div class="limit advanced-sortby position-relative pl-3 align-items-center border-none">
         <div class="select advanced-limit">
           <select class="field orderby filters-toolbar__input--view font-weight-normal border-none">
             <option value="8" {% if 8 == per_page %}selected{% endif %} >8</option>
