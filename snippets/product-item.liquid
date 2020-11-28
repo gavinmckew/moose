@@ -20,7 +20,7 @@
     {%- else -%}
     <div class="general-label">{{custom_badge}}</div>
     {%- endif -%}
-    <div class="name"><a href="{{product.url | within: collection}}">{{ product.collections.first.title }}</a></div>
+    <div class="name"><a href="{{product.url | within: collection}}">Escooter</a></div>
     {%- include 'product-item-images', my_layout: 'grid' -%}
     {%- if product.images.size > 1 -%}{%- include 'item-images' -%}{%- endif -%}
     {%- if settings.product_countdown_show -%}{%- include 'limited-offer' -%}{%- endif -%}
@@ -40,7 +40,7 @@
       {%- endif -%}
       <form class="" action="/cart/add" method="post" enctype="multipart/form-data">
       <input type="hidden" name="quantity" value="1" />
-      <button type="submit" class="btn btn-action addtocart-item-js add-to-cart" data-loading-text="{{'products.product.loading' | t | escape}}" title="{{'products.product.add_to_cart' | t | escape}}" {% unless product.available %}disabled{% endunless %}>{% if product.available %}<i class="d-none d-md-inline-block fa fa-plus"></i>{% endif %}<span>{%- if product.available -%}{{'products.product.add_to_cart' | t | escape}}{%- else -%}{{'products.product.sold_out' | t}}{%- endif -%}</span></button>
+      <button type="submit" class="btn btn-action addtocart-item-js add-to-cart" data-loading-text="{{'products.product.loading' | t | escape}}" title="{{'products.product.add_to_cart' | t | escape}}" {% unless product.available %}disabled{% endunless %}>{% if product.available %}<i class="d-none d-md-inline-block"></i>{% endif %}<span>{%- if product.available -%}{{'products.product.add_to_cart' | t | escape}}{%- else -%}{{'products.product.sold_out' | t}}{%- endif -%}</span></button>
       <select name="id" class="ProductItemSelect-{{ product.id }} variation-select no-js hide">
         {%- for variant in product.variants -%}
         {%- if variant.available -%}
