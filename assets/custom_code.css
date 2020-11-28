@@ -318,7 +318,7 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
     padding: 0 !important;
     margin-top: 4px; }
   .product-item-advanced-wrapper .swatch_color_advanced {
-    display: none; }
+    display: none !important; }
 
 .dots .item-images-wrapper {
   display: none; }
@@ -364,22 +364,49 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
       background: transparent;
       padding: 10px;
       color: #4e4e4e;
-      border: 0;
-      border-bottom: 2px solid #ff5000;
+      border: 2px #4e4e4e solid;
+      border-radius: 100px;
       width: 90%; }
 
 .list-options {
   padding-left: 0 !important;
   margin-top: 30px;
   float: right;
-  text-align: right; }
+  text-align: right;
+  width: 300px; }
   .list-options select {
     background: transparent;
     padding: 10px;
     color: #4e4e4e !important;
-    border: 0 !important;
-    border-bottom: 2px solid #4e4e4e !important;
+    border: 2px #4e4e4e solid;
+    border-radius: 100px;
     width: 90% !important; }
+
+.collection-hero h2 {
+  font-size: 20px; }
+
+.collection-hero img {
+  max-width: 100%; }
+
+.full {
+  width: 100%;
+  padding: 30px 0; }
+  .full.bg-lgrey {
+    background: #f6f6f6; }
+
+.product-filter .list-options .sort:after, .product-filter .list-options .limit:after {
+  display: block !important;
+  position: absolute !important;
+  right: 20px !important;
+  top: 10px !important; }
+
+.toolbar-right {
+  width: 100%; }
+  .toolbar-right .advanced-sortby {
+    float: right;
+    width: 48%; }
+    .toolbar-right .advanced-sortby.smaller {
+      width: 25%; }
 
 /* -------------------
 /  ------- INSTAGRAM BANNER

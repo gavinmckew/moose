@@ -12,68 +12,104 @@
 {%- assign tmp =  shop.url | append: collection.url | append: "/" -%}
 {%- assign tmp_url = canonical_url | replace : tmp, ""  -%}
 {%- assign a_tmp_url = tmp_url | split: "/" -%}
-<input class="collection-canonical_url" type="hidden" data-url="collections/{{- collection.handle -}}" data-parts="{{- a_tmp_url.size -}}" value="{{tmp_url}}">
 
 
-<div class="filter-wrap sort advanced-sortby">
-  <div class="filter">
-    <select class="coll-filter">
-      <option value="">By Tags</option>
-      {% for tag in collection.all_tags %} {% if current_tags contains tag %}
-      <option value="{{ tag | handle }}" selected>{{ tag }}</option>
-      {% else %}
-      <option value="{{ tag | handle }}">{{ tag }}</option>
-      {% endif %} {% endfor %}
-    </select>
+  <div class="row collection-hero">
+    <div class="col-12 col-md-8">
+      <h2>{{ collection.title }}</h2>
+      <p>{{ collection.description }}</p>
+    </div>
+    <div class="col-12 col-md-4">
+        <img src="{{ collection.image.src | collection_img_url: 'large' }}">
+    </div>
   </div>
 
-  <div class="filter sort advanced-sortby">
-    <select class="coll-filter">
-      <option value="">By Brand</option>
+<input class="collection-canonical_url" type="hidden" data-url="collections/{{- collection.handle -}}" data-parts="{{- a_tmp_url.size -}}" value="{{tmp_url}}">
+</div>
+</div>
 
-      {% for product_vendor in collection.all_vendors %}
-       {% if current_tags contains product_vendor %}
-       <option value="{{ product_vendor | handle }}" selected>{{ product_vendor }}</option>
-       {% else %}
-        <option value="{{ product_vendor | handle }}">{{ product_vendor }}</option>
-       {% endif %}{% endfor %}
-    </select>
+<div class="full bg-lgrey">
+  <div class="container">
+      <div class="filter-wrap sort advanced-sortby">
+      {{ collection.metafields }}{{ collection.metafields.global }}
+      { collection.metafields }{ collection.metafields.global }
+       <div class="custom-attributes-wrapper"> 
+       {%assign custom_attributes = collection.metafields.global %}  
+          {%if custom_attributes.size > 0 %}     
+            <h3>Additional information:</h3>    
+             <ul>       
+                {% for field in custom_attributes %}        
+                 {% assign attribute_code = field | first %}        
+                 {% assign attribute_value = field | last %}         
+                    <li class="custom-attribute-item"><span class="custom-attribute-name">{{ attribute_code }}</span>: <span class="custom-attribute-value">{{attribute_value}}</span> </li>       
+                {% endfor %}     
+             </ul>  
+          {%endif%}  
+
+        </div>
+        <div class="filter">
+          <select class="coll-filter">
+            <option value="">By Tags</option>
+            {% for tag in collection.all_tags %} {% if current_tags contains tag %}
+            <option value="{{ tag | handle }}" selected>{{ tag }}</option>
+            {% else %}
+            <option value="{{ tag | handle }}">{{ tag }}</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
+
+        <div class="filter sort advanced-sortby">
+          <select class="coll-filter">
+            <option value="">By Brand</option>
+
+            {% for product_vendor in collection.all_vendors %}
+             {% if current_tags contains product_vendor %}
+             <option value="{{ product_vendor | handle }}" selected>{{ product_vendor }}</option>
+             {% else %}
+              <option value="{{ product_vendor | handle }}">{{ product_vendor }}</option>
+             {% endif %}{% endfor %}
+          </select>
+        </div>
+      </div>
+
+    <script>
+      /* Product Tag Filters - Good for any number of filters on any type of collection pages */
+      const collFilters = document.querySelectorAll('.coll-filter');
+
+      if (collFilters.length > 0) {
+        collFilters.forEach((collFilter) => {
+          collFilter.addEventListener('change', function(){
+            var newTags = [];
+            collFilters.forEach((collFilter) => {
+              for(var i = 0; i <= collFilter.length-1; i++){
+                if(collFilter[i].selected == true && collFilter[i].value != "") {
+                  newTags.push(collFilter[i].value);
+                }
+              }
+            });
+
+            if (newTags.length) {
+              var query = newTags.join('+');
+              window.location.href = '/collections/{{ collection.handle }}/' + query;
+            }
+            else {
+              {% if collection.handle %}
+              window.location.href = '/collections/{{ collection.handle }}';
+              {% elsif collection.products.first.type == collection.title %}
+              window.location.href = '{{ collection.title | url_for_type }}';
+              {% elsif collection.products.first.vendor == collection.title %}
+              window.location.href = '{{ collection.title | url_for_vendor }}';
+              {% endif %}
+            }
+          });
+        });
+      }
+    </script>
   </div>
 </div>
 
-<script>
-  /* Product Tag Filters - Good for any number of filters on any type of collection pages */
-  const collFilters = document.querySelectorAll('.coll-filter');
-
-  if (collFilters.length > 0) {
-    collFilters.forEach((collFilter) => {
-      collFilter.addEventListener('change', function(){
-        var newTags = [];
-        collFilters.forEach((collFilter) => {
-          for(var i = 0; i <= collFilter.length-1; i++){
-            if(collFilter[i].selected == true && collFilter[i].value != "") {
-              newTags.push(collFilter[i].value);
-            }
-          }
-        });
-
-        if (newTags.length) {
-          var query = newTags.join('+');
-          window.location.href = '/collections/{{ collection.handle }}/' + query;
-        }
-        else {
-          {% if collection.handle %}
-          window.location.href = '/collections/{{ collection.handle }}';
-          {% elsif collection.products.first.type == collection.title %}
-          window.location.href = '{{ collection.title | url_for_type }}';
-          {% elsif collection.products.first.vendor == collection.title %}
-          window.location.href = '{{ collection.title | url_for_vendor }}';
-          {% endif %}
-        }
-      });
-    });
-  }
-</script>
+<div class="shopify-section col-12 col-md-12">
+<div class="container">
 
 <div class="row" data-section-id="{{ section.id }}" data-section-type="collection-template" data-view="{{per_page}}">
   {%- if settings.sb_collection_placement == 'left' -%}
@@ -84,12 +120,7 @@
   {%- paginate collection.products by per_page -%}
   <div id="col-main" class="center-column content-without-background collection-page{% if settings.sb_collection_placement != '' %} col-md-9{% else %} col-md-12{% endif %} col-sm-12{% if settings.shop_pagination != '' %} hide-pagination{% endif %}">
     <div id="mfilter-content-container" class="{%- if settings.collection_list_grid == '0' -%}list{%- else -%}grid{%- endif -%}">
-      {%- if collection.image or collection.description != blank -%}
-      <div class="category-info clearfix">
-        {%- if collection.image -%}<div class="image"><img src="{{collection.image | img_url: 'small'}}" alt="{{collection.title | escape}}" /></div>{%- endif -%}
-        {%- if collection.description -%}{{collection.description}}{%- endif -%}
-      </div>
-      {%- endif -%}
+      
       {%- include 'collection-filter' -%}
       <div id="sandbox">
         {%- if collection.products.size > 0 -%}
