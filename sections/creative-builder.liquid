@@ -48,7 +48,7 @@
                     {%- if block.settings.cta_text != blank or block.settings.linklist_enabled == true -%}
                     <div class="banner-content-wrapper text-vpos-top{% if block.settings.bg_image != blank %} bgimage-center-no-repeat lazyload{% endif %}" style="background-color:{{color_bg}};{% if block.settings.pattern > 0 %}{% render 'ssh-pattern', _pattern: block.settings.pattern, _opacity: '0.25', _fillcolor: block.settings.color_pattern %}{% endif %}"{% if block.settings.bg_image != blank %}{% assign img_url = block.settings.bg_image | img_url: "master" %} data-bg="{{img_url}}"{% else %} data-noimage{% endif %}>
                     {%-else-%}
-                    <a href="{{block.settings.linked_url}}" class="banner-content-wrapper text-vpos-top{% if block.settings.bg_image != blank %} bgimage-center-no-repeat lazyload{% endif %}" style="background-color:{{color_bg}};;{% if block.settings.pattern > 0 %}{% render 'ssh-pattern', _pattern: block.settings.pattern, _opacity: '0.25', _fillcolor: block.settings.color_pattern %}{% endif %}"{% if block.settings.bg_image != blank %}{% assign img_url = block.settings.bg_image | img_url: "master" %} data-bg="{{img_url}}"{% endif %}>
+                    <div href="{{block.settings.linked_url}}" class="banner-content-wrapper text-vpos-top{% if block.settings.bg_image != blank %} bgimage-center-no-repeat lazyload{% endif %}" style="background-color:{{color_bg}};;{% if block.settings.pattern > 0 %}{% render 'ssh-pattern', _pattern: block.settings.pattern, _opacity: '0.25', _fillcolor: block.settings.color_pattern %}{% endif %}"{% if block.settings.bg_image != blank %}{% assign img_url = block.settings.bg_image | img_url: "master" %} data-bg="{{img_url}}"{% endif %}>
                     {%-endif-%}
                         <div class="banner-texting p-2 position-absolute custom-absolute-pos{% if block.settings.content_align_hori %} text-align-center{% else %} {{block.settings.text_align}}{% endif %} without--fx{% if block.settings.cta == blank %} without--cta{% endif %}{% if block.settings.linklist_enabled == false %} without--linklist{% endif %}{% if block.settings.content_align_hori %} flex-nowrap flex-row{% endif %}" style="--top-side:{{block.settings.side_padding_vert}}%;--left-side:{{block.settings.side_padding_hori}}%;transform: translate({% if block.settings.side_padding_hori > 20 %}-50%{% else %}0{% endif %},{% if block.settings.side_padding_vert > 20 %}-50%{% else %}0{% endif %});">
                             {%-if block.settings.heading != blank-%}
@@ -89,7 +89,7 @@
                             {%-endif-%}
                         </div>
                     {%-if block.settings.cta_text == blank and block.settings.linklist_enabled == false-%}
-                    </a>{%-else-%}
+                    </div>{%-else-%}
                     </div>{%-endif-%}
                     <style>
                        #creative-builder-{{section.id}} .h3.custom-font-size{

@@ -444,6 +444,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   white-space: pre-line;
   text-align: center; }
 
+.creative-builder .cb-item.banner .banner-content-wrapper[data-noimage] {
+  outline: 0 !important; }
+
 /* -------------------
 /  ------- SHOP BY BRAND
 /* ------------------- 

@@ -31,22 +31,9 @@
 <div class="full bg-lgrey">
   <div class="container">
       <div class="filter-wrap sort advanced-sortby">
-      {{ collection.metafields }}{{ collection.metafields.global }}
-      { collection.metafields }{ collection.metafields.global }
-       <div class="custom-attributes-wrapper"> 
-       {%assign custom_attributes = collection.metafields.global %}  
-          {%if custom_attributes.size > 0 %}     
-            <h3>Additional information:</h3>    
-             <ul>       
-                {% for field in custom_attributes %}        
-                 {% assign attribute_code = field | first %}        
-                 {% assign attribute_value = field | last %}         
-                    <li class="custom-attribute-item"><span class="custom-attribute-name">{{ attribute_code }}</span>: <span class="custom-attribute-value">{{attribute_value}}</span> </li>       
-                {% endfor %}     
-             </ul>  
-          {%endif%}  
+      
 
-        </div>
+       
         <div class="filter">
           <select class="coll-filter">
             <option value="">By Tags</option>
@@ -70,6 +57,50 @@
              {% endif %}{% endfor %}
           </select>
         </div>
+
+        {%assign custom_attributes = collection.metafields.global %}  
+          {%if custom_attributes.size > 0 %} 
+          {% for field in custom_attributes %} 
+             {% assign attribute_code = field | first %}        
+             {% assign attribute_value = field | last %}   
+            <div class="filter">
+               
+                  <select class="coll-filter">
+                    <option value="">{{ attribute_code }}</option>
+                    {% if current_tags contains attribute_value %}
+                    <option value="{{attribute_value}}" selected>{{attribute_value}}</option>
+                    {% else %}
+                    <option value="{{attribute_value}}">{{attribute_value}}</option>
+                     {% endif %}
+                  </select>
+            </div>
+          {% endfor %}   
+           {% endif %}
+        
+
+        {%- for product in collection.products -%}
+
+          {%assign custom_attributes = product.metafields.global %}  
+            {%if custom_attributes.size > 0 %} 
+            {% for field in custom_attributes %} 
+               {% assign attribute_code = field | first %}        
+               {% assign attribute_value = field | last %}   
+              <div class="filter">
+                 
+                    <select class="coll-filter">
+                      <option value="">{{ attribute_code }}</option>
+                      {% if current_tags contains attribute_value %}
+                      <option value="{{attribute_value}}" selected>{{attribute_value}}</option>
+                      {% else %}
+                      <option value="{{attribute_value}}">{{attribute_value}}</option>
+                       {% endif %}
+                    </select>
+              </div>
+            {% endfor %}   
+             {% endif %}
+          
+
+        {% endfor %}
       </div>
 
     <script>
