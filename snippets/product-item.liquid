@@ -27,7 +27,10 @@
   </div> 
   <div class="product-item-content d-flex flex-column align-items-start justify-content-start">
    <div class="name-small mt-md-2"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
-    <div class="short-description mt-md-2">{{ product.description | strip_html | truncatewords: 50}}</div>
+    <div class="short-description mt-md-2">
+      {{ product.description | strip_html | truncatewords: 50}}
+      <div class="gradient-overlay"></div>
+    </div>
     <div class="price mt-md-2" data-price="{{-current_variant.price-}}">
       {%- if product.available -%}
       <span class="price-old money{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{current_variant.compare_at_price | money}}</span>

@@ -252,6 +252,13 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 .product-pull-up .product-item__shadow {
   display: none; }
 
+.gradient-overlay {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  background: #f6f6f6;
+  background: linear-gradient(0deg, #f6f6f6 0%, #f6f6f6 100%); }
+
 .product-item-advanced-wrapper {
   background-color: #f6f6f6;
   -webkit-border-radius: 50px;
@@ -297,7 +304,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
     width: auto;
     float: right; }
   .product-item-advanced-wrapper .short-description {
-    padding: 0 25px; }
+    padding: 0 25px;
+    max-height: 100px;
+    overflow: hidden; }
   .product-item-advanced-wrapper button {
     background: #717171;
     float: right;
@@ -364,7 +373,6 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
   .list-options select {
     background: transparent;
     padding: 10px;
-    float: right;
     color: #4e4e4e !important;
     border: 0 !important;
     border-bottom: 2px solid #4e4e4e !important;
