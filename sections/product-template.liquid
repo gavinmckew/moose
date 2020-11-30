@@ -149,15 +149,7 @@
   {%- endif -%}
   {%- if settings.product_design != "compact" and settings.product_design != "compact2" and settings.product_design != "simple" -%}
   <div data-rt-tabs class="product-details-tabs rt-tabs col-p-100 mt-4 justify-content-center" style="--border-color:#3a3a3a">
-    <div class="rt-tab">
-      <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-description" checked>
-      <label class="h3 pb-1 border-bottom custom-border-color" for="rt-tab-description">{{'products.product.description' | t}}</label>
-      <div class="rt-tab__content w-100">
-        <div class="py-3">
-        {{product.description}}
-        </div>
-      </div>
-    </div>
+    
     {%- if settings.reviews_enable != "" -%}
     <div class="rt-tab">
       <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-reviews">

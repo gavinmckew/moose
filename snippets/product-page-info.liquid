@@ -6,84 +6,13 @@
     <meta itemprop="price" content="{{ product.price | divided_by: 100.00 }}" />
     
     <h2 class="name {% if settings.reviews_enable == "" %}no-review{% endif %}">{{product.title}}</h2>
-    {% if settings.product_info_brand %}
-    <div class="vendor">{{product.vendor | link_to_vendor}}</div>
-    {% endif %}
-    <div class="review">
-      {%- if settings.reviews_enable != "" -%}
-      {%-include "review-stars"-%}
-      {%- endif -%}
-    </div>
-    {%- comment -%}  INFO AND STOCK  {%- endcomment -%}
-    {% if settings.product_info_sku or settings.product_info_status %}
-    <div class="description {%- if settings.product_info_status == false and settings.product_info_brand == false and settings.product_info_sku == false -%}{{- " hide" -}}{%- endif -%}">
-      <p id="product_sku" class="d-flex justify-content-start align-items-center flex-wrap variant-sku sku_wrapper{%- if current_variant.sku == blank or settings.product_info_sku == false-%}{{- " hide" -}}{%- endif -%}">
-		<span>{{'products.product.sku' | t}}</span> 
-        <span class="sku" itemprop="sku">{{ current_variant.sku }}</span>
-      </p>
-      <p class="d-flex justify-content-start align-items-center flex-wrap  variation-availability{%- if settings.product_info_status == false -%}{{- " hide" -}}{%- endif -%}">
-        <span>{{- 'products.product.stock' | t}}</span>
-        {%- if current_variant -%}
-        {%- if current_variant.available -%}
-        {%- if current_variant.inventory_management == "shopify" and current_variant.inventory_policy != "continue" -%}
-        {%- if current_variant.inventory_quantity > 0 -%}
-        <span class="stock stock-{{ section.id }} in-stock">{%- if settings.product_inventory == '1' -%}{{- current_variant.inventory_quantity  -}}{{- " " -}}{%- endif -%}{{ 'products.product.in_stock' | t | escape }}</span>
-        {%- else -%}
-        <span class="stock stock-{{ section.id }} out-of-stock">{{ 'products.product.out_of_stock' | t | escape }}</span>
-        {%- endif -%}
-        {%- else -%}
-        <span class="stock stock-{{ section.id }} in-stock">{{ 'products.product.in_stock' | t | escape }}</span>
-        {%- endif -%}
-        {%- else -%}
-        <span class="stock stock-{{ section.id }} out-of-stock">{{ 'products.product.out_of_stock' | t | escape }}</span>
-        {%- endif -%}
-        {%- else -%}
-        <span class="stock stock-{{ section.id }} out-of-stock">{{ 'products.product.unavailable' | t | escape }}</span>
-        {%- endif -%}
-      </p>
-    </div>
-    {% endif %}
-    {%- comment -%} PRICE {%- endcomment -%}
-    <div class="countdown-wrapper clearfix">
-      {%- include 'limited-offer' -%}
-    </div>
+   
+
+   
+
     <div class="product-focus">
       {% include 'product-detail-price', variant: current_variant, product: product %}
-      {% include "product-stock-countdown" %}
-      {%- comment -%} SHORT DESCRIPTION {%- endcomment -%}
-      {%- if instructions.short_description != blank -%}
-      <div class="short-description">{{- instructions.short_description  -}}</div>
-      {%- endif -%}
-      {%- comment -%} META FIELDS {%- endcomment -%}
-      <div class="row">
-
-
-      {%- for product in collection.products -%}
-
-          {%assign custom_attributes = product.metafields.global %}  
-            {%if custom_attributes.size > 0 %} 
-            {% for field in custom_attributes %} 
-               {% assign attribute_code = field | first %}        
-               {% assign attribute_value = field | last %}   
-
-               <div class="col-6">
-                  <div class="meta-icons">
-                    <div class="icon {{ attribute_code }}"></div>
-                    <div class="text">
-                        <div class="title">{{ attribute_code }}</div>
-                        <div class="para">{{attribute_value}}</div>
-                    </div>
-                  </div>
-                </div>
-            {% endfor %}   
-             {% endif %}
-          
-
-        {% endfor %}
-      </div>
-
-
-
+     
       {%- comment -%} QUANTITY AND ADD TO CART {%- endcomment -%}
       <div id="product">
         {%- if product.available -%}
@@ -112,7 +41,7 @@
                        data-unavailable="{{'products.product.unavailable' | t | escape}}"
                        data-soldout="{{'products.product.sold_out' | t | escape}}" />
               </div>
-			 
+       
               
           </div>
         </div>
@@ -137,6 +66,43 @@
           </div>
         </div>
         {%- endif -%}
+      {%- comment -%} SHORT DESCRIPTION {%- endcomment -%}
+      {%- if instructions.short_description != blank -%}
+      
+      {%- endif -%}
+      {%- comment -%} META FIELDS {%- endcomment -%}
+      <div class="row">
+
+
+      {%- for product in collection.products -%}
+
+          {%assign custom_attributes = product.metafields.global %}  
+            {%if custom_attributes.size > 0 %} 
+            {% for field in custom_attributes %} 
+               {% assign attribute_code = field | first %}        
+               {% assign attribute_value = field | last %}   
+
+               <div class="col-6">
+                  <div class="meta-icons">
+                    <div class="icon {{ attribute_code }}"></div>
+                    <div class="text">
+                        <div class="title">{{ attribute_code }}</div>
+                        <div class="para">{{attribute_value}}</div>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}   
+             {% endif %}
+          
+
+        {% endfor %}
+
+        <div class="short-description">{{product.description}}</div>
+      </div>
+
+
+
+      
 
         {%- comment -%} WISHLIT COMPARE QUESTIONS SIZECHART{%- endcomment -%} 
         {% include "product-actions" %}

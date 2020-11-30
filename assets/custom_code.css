@@ -380,6 +380,18 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 .custom-prod .name {
   color: #4e4e4e; }
 
+.custom-prod .short-description {
+  color: #666;
+  margin-top: 30px;
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding: 20px 0; }
+
+.custom-prod .product__policies {
+  color: #ccc;
+  margin-top: -30px;
+  font-size: 11px; }
+
 .custom-prod .vendor {
   color: #666;
   font-size: 12px;
@@ -387,9 +399,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 .custom-prod .price-new {
   padding: 10px 0 !important;
-  font-size: 30px !important;
+  font-size: 34px !important;
   color: #ff5000 !important;
-  font-weight: 900 !important; }
+  font-weight: 700 !important; }
 
 .custom-prod .quantity-wrapper {
   display: none !important; }
@@ -403,15 +415,17 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 .custom-prod .meta-icons {
   position: relative;
-  padding: 12px 0 !important; }
+  padding: 12px 0 !important;
+  margin: 5px 0;
+  border-bottom: 1px solid #f6f6f6; }
   .custom-prod .meta-icons .icon {
-    width: 30%;
+    width: 25%;
     float: left;
     height: 100%;
     background-size: contain !important;
-    min-height: 40px; }
+    min-height: 35px; }
   .custom-prod .meta-icons .text {
-    width: 65%;
+    width: 73%;
     float: right; }
   .custom-prod .meta-icons .title {
     font-size: 14px;
