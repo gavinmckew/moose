@@ -55,10 +55,7 @@
   .col-p-0{display:none}.col-p-100{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.col-p{-webkit-box-flex:0;-ms-flex:0 0 var(--pcol);flex:0 0 var(--pcol);max-width:var(--pcol)}@media (max-width:767px){.col-pm-0{display:none!important}.col-pm-100{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.col-p{-webkit-box-flex:0;-ms-flex:0 0 var(--pmcol,var(--pcol));flex:0 0 var(--pmcol,var(--pcol));max-width:var(--pmcol,var(--pcol))}}</style>
   {%- include 'shopify-head' -%}
   {{ content_for_header }}
-  {{ 'customized-styles.css' | asset_url | stylesheet_tag }}    {% include 'qikify-navigator' %}
-  {% include 'qikify-smartmenu-data' %}
-  <script type="text/javascript" src="https://sdk.qikify.com/tmenu/app-v5.js?token=rs0q0AJRoUMeKfeIyLiNkCbEVYqQiWL6&shop=moose-marketplace.myshopify.com" defer="defer"></script>
-</head>
+  {{ 'customized-styles.css' | asset_url | stylesheet_tag }}  </head>
 
 
 {% capture body_class %}
@@ -121,8 +118,8 @@
             <div class="pattern">
               <div class="page-width">
 
-                {{ content_for_layout }}{% include 'sectionhub' %}
-                {%- if template == 'product' -%}<div class="container px-2 pb-5">{%- if settings.product_bottom_banner -%}{%- section 'creative-builder' -%}{%- endif -%}{%- include 'product-bottom' -%}</div>{%- endif -%}
+                {{content_for_layout}}
+                {%- if template == 'product' -%}{%- if settings.product_bottom_banner -%}{%- section 'creative-builder' -%}{%- endif -%}{%- include 'product-bottom' -%}{%- endif -%}
                 {%- if settings.ctemplate_type == "promo" and template contains "collection"  and template != "list-collections" -%}<div class="container px-2 pb-5">{%- section 'creative-builder' -%}</div>{%- endif -%}
               </div>
             </div>
@@ -166,5 +163,5 @@
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
   <script>AOS.init();</script>
-<script src="{{ 'sectionhub.js' | asset_url }}" defer></script></body>
+</body>
 </html>

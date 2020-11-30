@@ -346,8 +346,81 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 /  ------- PRODUCT PAGE
 /* ------------------- 
 /*/
-.sticky-info-product-template {
+#sticky-info-product-template {
+  background: #ff5000; }
+  #sticky-info-product-template h1 {
+    font-size: 15px;
+    color: white; }
+  #sticky-info-product-template .sticky-button {
+    border-radius: 100px;
+    background: white !important;
+    color: #ff5000;
+    transform: 1s all;
+    transition: 1s all; }
+    #sticky-info-product-template .sticky-button:hover {
+      border-radius: 0;
+      background: #4e4e4e !important; }
+
+.prod-recommendations {
+  background: #4e4e4e; }
+  .prod-recommendations .h3 {
+    color: #ff5000;
+    margin: 30px auto;
+    text-align: center; }
+
+.prod-viewed {
+  background: #f6f6f6; }
+  .prod-viewed .custom-bgcolor {
+    background-color: transparent !important; }
+  .prod-viewed .h3 {
+    color: #ff5000;
+    margin: 30px auto;
+    text-align: center; }
+
+.custom-prod .name {
+  color: #4e4e4e; }
+
+.custom-prod .vendor {
+  color: #666;
+  font-size: 12px;
   display: none !important; }
+
+.custom-prod .price-new {
+  padding: 10px 0 !important;
+  font-size: 30px !important;
+  color: #ff5000 !important;
+  font-weight: 900 !important; }
+
+.custom-prod .quantity-wrapper {
+  display: none !important; }
+
+.custom-prod .prod-submit {
+  background: #ff5000 !important;
+  color: white !important;
+  border-radius: 100px;
+  float: left;
+  font-size: 15px; }
+
+.custom-prod .meta-icons {
+  position: relative;
+  padding: 12px 0 !important; }
+  .custom-prod .meta-icons .icon {
+    width: 30%;
+    float: left;
+    height: 100%;
+    background-size: contain !important;
+    min-height: 40px; }
+  .custom-prod .meta-icons .text {
+    width: 65%;
+    float: right; }
+  .custom-prod .meta-icons .title {
+    font-size: 14px;
+    color: #4e4e4e !important;
+    font-weight: bold; }
+  .custom-prod .meta-icons .para {
+    color: #666;
+    font-size: 12px;
+    font-weight: bold; }
 
 /* -------------------
 /  ------- COLLECTIONS PAGE

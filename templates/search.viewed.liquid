@@ -11,23 +11,76 @@
 {%- if _my_product_id > 0 and _product_id != _my_product_id -%}
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign featured_image = current_variant.featured_media.preview_image | default:product.featured_media.preview_image -%}
-<div class="splide__slide p-sm-1 product product-viewed-item">
-  <div class="product-viewed-item d-flex align-items-center">
-    <div class="image col-4 p-0">
-      <img class="w-100 lazyload"  src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-src="{{featured_image | img_url: "150x200", crop: "top"}}" />
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_media.preview_image | default:product.featured_media.preview_image -%}
+{%- assign _dim = '500x' -%}
+{%-assign _onepone = ' lazyload" src=data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw== data-'-%}
+<div  class="product-pull-up product product-content-wrapper clearfix product-hover product-item-advanced-wrapper quickshop-type-advanced-wrapper position-relative dots{% if settings.product_countdown_show and product.metafields.info.countdown != blank %} has-countdown{% endif %}">
+  <span class="product-item__shadow"></span>
+  <div class="product-item__top">
+    {%- if custom_badge == blank or custom_badge == empty -%}
+    {%- if settings.product_sale_badge != '' and current_variant.compare_at_price > current_variant.price -%}
+    <div class="sale {% if settings.product_sale_badge != '0' %}percentage{% endif %}{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">
+      {%- if settings.product_sale_badge == '0' -%}
+      {{- 'products.product.sale' | t -}}
+      {%- else -%}
+      -{{current_variant.compare_at_price | minus:current_variant.price | times:100.0 | divided_by:current_variant.compare_at_price | ceil }}%
+      {%- endif -%}
     </div>
-    <div class="info col-8 pr-0">
-      <div class="name"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
-      <div class="price d-flex" data-price="{{-current_variant.price-}}">
-        {%- if product.available -%}
-        <span class="price-old money{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{current_variant.compare_at_price | money}}</span>
-        <span class="price-new money mr-2">{{current_variant.price | money}}</span>
+    {%- elsif settings.product_new_badge and product.tags contains 'latest' -%}
+    <div class="new">{{'products.product.new' | t}}</div>
+    {%- endif -%}
+    {%- else -%}
+    <div class="general-label">{{custom_badge}}</div>
+    {%- endif -%}
+    <div class="name"><a href="{{product.url | within: collection}}">Escooter</a></div>
+    {%- include 'product-item-images', my_layout: 'grid' -%}
+    {%- if product.images.size > 1 -%}{%- include 'item-images' -%}{%- endif -%}
+    {%- if settings.product_countdown_show -%}{%- include 'limited-offer' -%}{%- endif -%}
+  </div> 
+  <div class="product-item-content d-flex flex-column align-items-start justify-content-start">
+   <div class="name-small mt-md-2"><a href="{{product.url | within: collection}}">{{product.title}}</a></div>
+    <div class="short-description mt-md-2">
+      {{ product.description | strip_html | truncatewords: 50}}
+      <div class="gradient-overlay"></div>
+    </div>
+    <div class="price mt-md-2" data-price="{{-current_variant.price-}}">
+      {%- if product.available -%}
+      <span class="price-old money{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{current_variant.compare_at_price | money}}</span>
+      <span class="price-new money mr-2">{{current_variant.price | money}}</span>
+      {%- else -%}
+      <span class="price-new money">{{current_variant.price | money}}</span>
+      {%- endif -%}
+      <form class="" action="/cart/add" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="quantity" value="1" />
+      <button type="submit" class="btn btn-action addtocart-item-js add-to-cart" data-loading-text="{{'products.product.loading' | t | escape}}" title="{{'products.product.add_to_cart' | t | escape}}" {% unless product.available %}disabled{% endunless %}>{% if product.available %}<i class="d-none d-md-inline-block"></i>{% endif %}<span>{%- if product.available -%}{{'products.product.add_to_cart' | t | escape}}{%- else -%}{{'products.product.sold_out' | t}}{%- endif -%}</span></button>
+      <select name="id" class="ProductItemSelect-{{ product.id }} variation-select no-js hide">
+        {%- for variant in product.variants -%}
+        {%- if variant.available -%}
+        <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+          {{- variant.title -}}
+        </option>
         {%- else -%}
-        <span class="price-new money">{{current_variant.price | money}}</span>
+        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t | escape }}</option>
         {%- endif -%}
-      </div>
+        {%- endfor -%}
+      </select>
+    </form>
+
     </div>
+    
+    {%- include "product-options-item" -%}
+    {%- if settings.reviews_enable != ""-%}
+    {%-render "review-item-stars", product: product-%}
+    {%- endif -%}
   </div>
+  
+
+  {%- unless product == empty -%}
+  <script type="application/json" class="ProductItemJson">
+    {{- product | json -}}
+  </script>
+  {%- endunless -%}
 </div>
 {%- endif -%}
 {%- endif -%}

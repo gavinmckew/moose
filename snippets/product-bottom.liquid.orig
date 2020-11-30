@@ -12,13 +12,10 @@
         <div class="rt-tab__content d-flex">
           <div id="productsRelated" class="col-p-100">
             <div class="is-slider no-pagination splide has-container" data-splide='{"type":"slide","perMove":"1","breakpoints":{"767":{"destroy":"true"}},"perPage":"4"}'>
-<<<<<<< HEAD
+
               <span class="position-absolute h-100 zi-lv9 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
               <span class="absolute-right h-100 zi-lv9 mr-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
-=======
-              <span class="position-absolute h-100 zi-lv1 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
-              <span class="absolute-right h-100 zi-lv1 mr-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
->>>>>>> refs/remotes/origin/master
+
               {%- render 'slider-nav-buttons', custom_class: 'd-none d-md-block' -%}
 
               <div class="splide__track w-100">
@@ -59,45 +56,9 @@
       {%- endif -%}
     </div>
     {%- endif -%}
-<<<<<<< HEAD
-    
-    {% if settings.product_bottom_upsell and settings.product_bottom_upsell_collection != blank and settings.product_bottom_upsell_limit != blank %}
-    <div class="product-upsells">
-      <div class="cb-head col-p-100 pb-2 d-flex justify-content-center" style="--border-color:#e5e5e5">
-        <span class="h3 pt-4">{{settings.product_bottom_upsell_heading}}</span>
-      </div>
-      <div id="productUpsells" class="col-p-100">
-        <div class="is-slider no-pagination splide has-container" data-splide='{"type":"slide","perMove":"1","breakpoints":{"767":{"destroy":"true"}},"perPage":"4"}'>
-          <span class="position-absolute h-100 zi-lv9 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
-          <span class="absolute-right h-100 zi-lv9 mr-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
-          {%- render 'slider-nav-buttons', custom_class: 'd-none d-md-block' -%}
 
-          <div class="splide__track w-100">
-            <div class="splide__list w-100 rt-mobile-snapscroll">
-              {% assign collection = collections[settings.product_bottom_upsell_collection] %}
-              {%- assign my_limit = settings.product_bottom_upsell_limit | plus:1 -%}
-              {%- assign my_product = product -%}
-              {%- assign my_product_found = false -%}
-              {%- for product in collection.products limit: my_limit -%}
-              {%- if product.handle == my_product.handle -%}
-              {%- assign my_product_found = true -%}
-              {%- else -%}
-              {%- unless my_product_found == false and forloop.last -%}
-              <div class="splide__slide p-sm-1 product product-upsell-item">
-                {%- include 'product-item' -%}
-              </div>
-              {%- endunless -%}
-              {%- endif -%}
-              {%- endfor -%}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endif %}
-=======
     {% include "product-upsells" %}
->>>>>>> refs/remotes/origin/master
+
     {% if settings.product_bottom_recommendations %}
     {% section 'product-recommendations' %}
     {% endif %}
@@ -109,13 +70,9 @@
       </div>
       <div id="productsViewed" class="col-p-100">
         <div class="is-slider no-pagination splide has-container" data-splide='{"type":"slide","perMove":"1","breakpoints":{"767":{"destroy":"true"}},"perPage":"4"}'>
-<<<<<<< HEAD
-          <span class="position-absolute h-100 zi-lv9 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
+        <span class="position-absolute h-100 zi-lv9 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
           <span class="absolute-right h-100 zi-lv9 mr-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
-=======
-          <span class="position-absolute h-100 zi-lv1 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
-          <span class="absolute-right h-100 zi-lv1 mr-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
->>>>>>> refs/remotes/origin/master
+
           {%- render 'slider-nav-buttons', custom_class: 'd-none d-md-block' -%}
           <div class="splide__track w-100">
             <div class="splide__list w-100 rt-mobile-snapscroll" id="recently-viewed-products" data-limit="{{settings.product_bottom_viewed_limit}}" data-handle="{{- product.handle -}}" data-id="{{- product.id -}}">
