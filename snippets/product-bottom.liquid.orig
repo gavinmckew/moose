@@ -57,11 +57,7 @@
     </div>
     {%- endif -%}
 
-    {% include "product-upsells" %}
-
-    {% if settings.product_bottom_recommendations %}
-    {% section 'product-recommendations' %}
-    {% endif %}
+    
     
     {%- if settings.product_bottom_viewed -%}
     <div class="viewed-products">

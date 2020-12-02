@@ -3,6 +3,7 @@
     {{settings.product_bottom_html_content}}
     {%- endif -%}
 </div>
+
 </div>
     {%- if settings.product_bottom_viewed -%}
     <div class="viewed-products prod-viewed">
@@ -12,7 +13,7 @@
                 <div class="h3">Recently Viewed</div>
                 <div id="productsViewed" class="col-p-100">
 
-                  <div style="--splide-arrow-size:2em;--splide-arrow-size-md:3em;--splide-arrow-bgc:#c6c6c66e;--splide-arrow-br:0;" class="is-slider no-pagination splide splide--arrowpos--cent-side has-container" data-splide='{"type":"slide","perMove":"1","breakpoints":{"767":{"destroy":"true"}},"perPage":"4"}'>
+                  <div style="--splide-arrow-size:2em;--splide-arrow-size-md:3em;--splide-arrow-bgc:#c6c6c66e;--splide-arrow-br:0;" class="is-slider no-pagination splide splide--arrowpos--cent-side has-container" data-splide='{"type":"slide","perMove":"1","breakpoints":{"767":{"destroy":"true"}},"perPage":"3"}'>
                     <span class="position-absolute h-100 zi-lv9 ml-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
                     <span class="absolute-right h-100 zi-lv9 mr-n-container custom-bgcolor w-container" style="--bg-color:{{settings.color_body_bg}};"></span>
 
@@ -29,21 +30,9 @@
     </div>
     </div> 
     {%- endif -%}
-    
-    
 
-      {% if settings.product_bottom_recommendations %}
-       <div class="prod-recommendations">
-          <div class="container px-2 pb-5">
-          <div class="row product-bottom-wrappper" style="--snapscroll-itemsize:70%;">
-          <div class="col-sm-12">
-            <div class="h3">Recommended Scooters</div>
-          </div>
-          </div>
-          </div>
-        {% section 'product-recommendations' %}
-        
-       </div>
-      {% endif %}
+    
+    
+    
      
 
