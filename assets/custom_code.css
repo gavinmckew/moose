@@ -379,17 +379,16 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 
 .tabbed-section {
   width: 100%;
-  padding: 30px;
-  overflow: auto; }
+  padding: 30px; }
+  .tabbed-section .rt-tabs {
+    min-height: 500px; }
   .tabbed-section .container {
     background: white;
-    padding: 10px 20px 40px 20px; }
+    padding: 10px 40px 60px 40px; }
+    .tabbed-section .container .row {
+      padding-bottom: 40px; }
   .tabbed-section .rt-tab {
     height: auto !important; }
-    .tabbed-section .rt-tab:first-child .rt-tab__content {
-      z-index: 1;
-      opacity: 1;
-      visibility: visible; }
     .tabbed-section .rt-tab label {
       color: white !important;
       padding: 0 !important;
@@ -401,17 +400,22 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
       -moz-border-radius-topleft: 0;
       border-radius: 40px;
       border-top-left-radius: 0;
-      padding: 15px 20px 15px 40px !important;
-      background: #ff5000 !important;
+      padding: 15px 25px 15px 45px !important;
+      background: #666 !important;
       color: white !important;
       margin: 10px;
       transition: 1s all;
       padding-right: 30px; }
       .tabbed-section .rt-tab label:hover {
-        background: #ff5000; }
+        background: #ff5000 !important;
+        opacity: 1 !important; }
     .tabbed-section .rt-tab .rt-tab__content {
       top: 75px;
       height: 100%; }
+      .tabbed-section .rt-tab .rt-tab__content h2 {
+        color: #ff5000;
+        margin-bottom: 20px;
+        font-size: 16px; }
     .tabbed-section .rt-tab .h3 {
       color: #ff5000;
       font-size: 20px;

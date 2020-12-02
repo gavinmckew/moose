@@ -76,7 +76,7 @@
 
       {%- for product in collection.products -%}
 
-          {%assign custom_attributes = product.metafields.global %}  
+          {%assign custom_attributes = product.metafields.icons %}  
             {%if custom_attributes.size > 0 %} 
             {% for field in custom_attributes %} 
                {% assign attribute_code = field | first %}        

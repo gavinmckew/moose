@@ -166,47 +166,43 @@
               <div class="col-12 col-md-6">
                 <div class="h3">Performance</div>
                 <table border="1">
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
+                  {%- for product in collection.products -%}
+
+                      {%assign custom_attributes = product.metafields.performance %}  
+                        {%if custom_attributes.size > 0 %} 
+                        {% for field in custom_attributes %} 
+                           {% assign attribute_code = field | first %}        
+                           {% assign attribute_value = field | last %}   
+
+                           <tr>
+                              <td>{{ attribute_code }}</td>
+                              <td>{{attribute_value}}</td>
+                           </tr>
+                             
+                        {% endfor %}   
+                         {% endif %}
+                    {% endfor %}
                 </table>
               </div>
               <div class="col-12 col-md-6">
                 <div class="h3">Accessibility</div>
                 <table border="1">
-                  <tr>
-                    <td>Top Speed</td>
-                    <td>21 mph</td>
-                  </tr>
+                  {%- for product in collection.products -%}
+
+                      {%assign custom_attributes = product.metafields.accessibility %}  
+                        {%if custom_attributes.size > 0 %} 
+                        {% for field in custom_attributes %} 
+                           {% assign attribute_code = field | first %}        
+                           {% assign attribute_value = field | last %}   
+
+                           <tr>
+                              <td>{{ attribute_code }}</td>
+                              <td>{{attribute_value}}</td>
+                           </tr>
+                             
+                        {% endfor %}   
+                         {% endif %}
+                    {% endfor %}
                 </table>
               </div>
             </div>
@@ -219,7 +215,24 @@
       <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-features">
       <label class="features" for="rt-tab-features">Key Features</label>
       <div class="rt-tab__content w-100">
-        Key features here
+        <table border="1">
+                  {%- for product in collection.products -%}
+
+                      {%assign custom_attributes = product.metafields.features %}  
+                        {%if custom_attributes.size > 0 %} 
+                        {% for field in custom_attributes %} 
+                           {% assign attribute_code = field | first %}        
+                           {% assign attribute_value = field | last %}   
+
+                           <tr>
+                              <td>{{ attribute_code }}</td>
+                              <td>{{attribute_value}}</td>
+                           </tr>
+                             
+                        {% endfor %}   
+                         {% endif %}
+                    {% endfor %}
+                </table>
       </div>
     </div>
 
@@ -227,7 +240,7 @@
       <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-warranty">
       <label class="warranty" for="rt-tab-warranty">Warranty</label>
       <div class="rt-tab__content w-100">
-        Warranty Here
+       {{ product.metafields.text.Warranty-text }}
       </div>
     </div>
 
@@ -235,7 +248,7 @@
       <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-delivery">
       <label class="delivery" for="rt-tab-delivery">Delivery</label>
       <div class="rt-tab__content w-100">
-        Delivery Here
+        {{ product.metafields.text.Delivery-text }}
       </div>
     </div>
    
@@ -273,6 +286,8 @@
         {% endfor %}
         >
 </script>
+
+
 <script type="application/json" id="ModelJson-{{ section.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
 </script>
