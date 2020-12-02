@@ -148,19 +148,67 @@
   {%- include "product-accordions" -%}
   {%- endif -%}
   {%- if settings.product_design != "compact" and settings.product_design != "compact2" and settings.product_design != "simple" -%}
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="tabbed-section">
+  <div class="container">
   <div data-rt-tabs class="product-details-tabs rt-tabs col-p-100 mt-4 justify-content-center" style="--border-color:#3a3a3a">
     
-    {%- if settings.reviews_enable != "" -%}
+   
     <div class="rt-tab">
-      <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-reviews">
-      <label class="h3 pb-1 border-bottom custom-border-color" for="rt-tab-reviews">{{'products.product.customer_reviews' | t}}</label>
+      <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-spec">
+      <label class="specification" for="rt-tab-spec">Specification</label>
       <div class="rt-tab__content w-100">
         <div class="py-3">
-        {%-include "review-content"-%}
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="h3">Performance</div>
+                <table>
+                  <tr>
+                    <td>Top Speed</td>
+                    <td>21 mph</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="h3">Accessibility</div>
+                <table>
+                  <tr>
+                    <td>Top Speed</td>
+                    <td>21 mph</td>
+                  </tr>
+                </table>
+              </div>
         </div>
       </div>
     </div>
-    {% endif %}
+
+    <div class="rt-tab">
+      <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-features">
+      <label class="features" for="rt-tab-features">Key Features</label>
+      <div class="rt-tab__content w-100">
+        Key features here
+      </div>
+    </div>
+
+    <div class="rt-tab">
+      <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-warranty">
+      <label class="warranty" for="rt-tab-warranty">Warranty</label>
+      <div class="rt-tab__content w-100">
+        Warranty Here
+      </div>
+    </div>
+
+    <div class="rt-tab">
+      <input class="rt-tab__radio" type="radio" name="rt-tabgroup-detail" id="rt-tab-delivery">
+      <label class="delivery" for="rt-tab-delivery">Delivery</label>
+      <div class="rt-tab__content w-100">
+        Delivery Here
+      </div>
+    </div>
+   
     {% for i in (1..4) %}
     {% assign s_tab_title = "product_tab_title_" | append: i %}
     {% assign s_tab_content = "product_tab_content_" | append: i %}
@@ -182,7 +230,7 @@
   </div>
   {%- endif -%}
  
-  {%- if settings.sticky_cart != "" -%}{%- include "sticky-info" -%}{%- endif -%}
+ 
 </div>
 {%- unless product == empty -%}
 <script type="application/json" id="ProductJson-{{ section.id }}">
