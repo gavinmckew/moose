@@ -13,7 +13,7 @@
 {%- assign tmp_url = canonical_url | replace : tmp, ""  -%}
 {%- assign a_tmp_url = tmp_url | split: "/" -%}
 
-
+{% if collection.handle != 'all' %}
   <div class="row collection-hero">
     <div class="col-12 col-md-8">
       <h2>{{ collection.title }}</h2>
@@ -23,12 +23,12 @@
         <img src="{{ collection.image.src | collection_img_url: 'large' }}">
     </div>
   </div>
-
+{% endif %}
 <input class="collection-canonical_url" type="hidden" data-url="collections/{{- collection.handle -}}" data-parts="{{- a_tmp_url.size -}}" value="{{tmp_url}}">
 </div>
 </div>
 
-<div class="full bg-lgrey">
+<div class="full bg-lgrey mobile-hide">
   <div class="container">
       <div class="filter-wrap sort advanced-sortby">
       
@@ -139,6 +139,48 @@
   </div>
 </div>
 
+<div class="full bg-lgrey desktop-hide">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">Sort</div>
+      <div class="col-6 js-menu menu-toggle">Filter</div>
+    </div>
+   
+      <menu class="menu">
+        <nav>
+          <ul class="first-level">
+            <li class="close js-menu">Fermer</li>
+            <li class="blue">
+              <a href="#">Vegetables</a>
+              <ul class="second-level">
+                <li>
+                  <a href="#">Zucchini</a>
+                </li>
+                <li>
+                  <a href="#">Endive</a>
+                </li>
+                <li>
+                  <a href="#">Eggplant</a>
+                </li>
+              </ul>
+            </li>
+            <li class="red">
+              <a href="#">Fruits</a>
+              <ul class="second-level">
+                <li>
+                  <a href="#">Banana</a>
+                </li>
+                <li>
+                  <a href="#">Apricot</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </menu>
+  </div>
+</div>
+
 <div class="shopify-section col-12 col-md-12">
 <div class="container">
 
@@ -158,7 +200,7 @@
         <div class="product-grid products">
           <div class="row">
             {%- for product in collection.products -%}
-            <div class="pb-3 px-2 col col-xs-6 product-item">
+            <div class="pb-3 px-2 col col-xs-12 col-md-3 product-item">
               {%- include 'product-item' -%}
             </div>
             {%- endfor -%}

@@ -4852,10 +4852,10 @@
               "border_bottom": false,
               "border_left": false,
               "border_right": false,
-              "mobile_border_top": false,
-              "mobile_border_bottom": false,
-              "mobile_border_left": false,
-              "mobile_border_right": false,
+              "mobile_border_top": true,
+              "mobile_border_bottom": true,
+              "mobile_border_left": true,
+              "mobile_border_right": true,
               "title": "Banner",
               "content_align_hori": false
             }
@@ -5024,13 +5024,28 @@
               "title": "Banner",
               "content_align_hori": false
             }
+          },
+          "3f5eea21-84a7-4163-96f8-48e1bf39ec11": {
+            "type": "spacing",
+            "settings": {
+              "width": 0,
+              "width_mobile": 100,
+              "height": 5,
+              "mobile_height": 25,
+              "color_bg": "rgba(0,0,0,0)",
+              "line_thick": 0,
+              "line_width": 100,
+              "color_line": "#e6e7e8",
+              "line_align": "center"
+            }
           }
         },
         "block_order": [
           "4f707f9e-dae1-4558-8117-ead86cd0c5d1",
           "ca63f99a-e5b0-4c62-a355-f1fad498d21d",
           "27a9fd35-6c2b-4a13-8159-20a15d754498",
-          "19ba7979-df8d-4e53-8c16-b2387a345e38"
+          "19ba7979-df8d-4e53-8c16-b2387a345e38",
+          "3f5eea21-84a7-4163-96f8-48e1bf39ec11"
         ],
         "settings": {
           "title": "Latest E-Scooters",
@@ -5442,9 +5457,9 @@
             "type": "banner",
             "settings": {
               "width": 100,
-              "width_mobile": 90,
+              "width_mobile": 0,
               "height": 220,
-              "mobile_height": 240,
+              "mobile_height": 10,
               "has_padding": false,
               "bg_image": "shopify:\/\/shop_images\/banner_main_drop.png",
               "color_bg": "#cccccc",
@@ -5480,7 +5495,7 @@
               "linklist_type": "left",
               "text_align": "text-align-center",
               "side_padding_hori": 50,
-              "side_padding_vert": 50,
+              "side_padding_vert": 20,
               "border_top": false,
               "border_bottom": false,
               "border_left": false,
@@ -5492,10 +5507,22 @@
               "title": "Banner",
               "content_align_hori": false
             }
+          },
+          "a8ed46f4-5a59-4754-ab40-afda64b607ec": {
+            "type": "text",
+            "settings": {
+              "width": 0,
+              "width_mobile": 100,
+              "has_padding": false,
+              "text": "CHECK OUT OUR VIDEO",
+              "color_text": "#333232",
+              "text_align": "justify-content-center"
+            }
           }
         },
         "block_order": [
-          "1605791037edc03f60-0"
+          "1605791037edc03f60-0",
+          "a8ed46f4-5a59-4754-ab40-afda64b607ec"
         ],
         "settings": {
           "title": "3 BANNERS",
@@ -5660,14 +5687,14 @@
             "settings": {
               "width": 100,
               "width_mobile": 100,
-              "height": 500,
-              "mobile_height": 360,
+              "height": 410,
+              "mobile_height": 400,
               "has_padding": false,
               "bg_image": "shopify:\/\/shop_images\/signup.jpg",
               "color_bg": "#cccccc",
               "pattern": 8,
               "color_pattern": "#efefef",
-              "heading": "deer, but not <br>what you think",
+              "heading": "deer, but not<br>what you think",
               "heading_color": "#ff5000",
               "heading_size": 60,
               "heading_weight": 700,
