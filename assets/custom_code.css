@@ -150,6 +150,21 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 .text-center {
   text-align: center; }
 
+.desktop-hide {
+  display: none; }
+  @media (max-width: 800px) {
+    .desktop-hide {
+      display: block; } }
+
+.mobile-hide {
+  display: block; }
+  @media (max-width: 800px) {
+    .mobile-hide {
+      display: none; } }
+
+.b-right {
+  border-right: 1px solid #ccc; }
+
 /* -------------------
 /  ------- UNDER MENU
 /* ------------------- 

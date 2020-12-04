@@ -142,8 +142,8 @@
 <div class="full bg-lgrey desktop-hide">
   <div class="container">
     <div class="row">
-      <div class="col-6 text-center"><i class="fas fa-sort"></i> Sort</div>
-      <div class="col-6 text-center js-menu menu-toggle"><i class="fas fa-sort"></i> Filter</div>
+      <div class="col-6 text-center b-right"><i class="fa fa-sort"></i> Sort</div>
+      <div class="col-6 text-center js-menu menu-toggle"><i class="fa fa-filter"></i> Filter</div>
     </div>
 
     {%assign custom_attributes = collection.metafields.global %}  
@@ -194,7 +194,7 @@
                   </ul>
             </li>
             
-
+            {%- for product in collection.products -%}
             {%assign custom_attributes = product.metafields.icons %}  
                   {%if custom_attributes.size > 0 %} 
                   {% for field in custom_attributes %} 
@@ -210,22 +210,23 @@
                    {% endif %}
                   {% endfor %}   
                   {% endif %}
-      
-              
-                  </ul>
-            </li>
+            {% endfor %} 
 
-             <li class="red">
-              <a href="#">Mileage</a>
-              <ul class="second-level">
-                {% for product_vendor in collection.all_vendors %}
-                 {% if current_tags contains product_vendor %}
-                 <li class="active" data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
-                 {% else %}
-                   <li data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
-                 {% endif %}{% endfor %}
-                </ul>
-            </li>
+            {%- for product in collection.products -%}
+              {% assign icons = product.metafields.icons %}
+
+              {% for i in (1..icons.total-icons) %}
+                {% assign dummy = 'icons-' | append:i %}
+                {% assign icon = product.metafields[dummy] %}
+                {{ icon.name }}
+              {% endfor %}
+
+            {% endfor %}
+              
+                  
+
+
+             
             
           </ul>
         </nav>
