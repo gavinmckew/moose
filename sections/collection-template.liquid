@@ -142,39 +142,91 @@
 <div class="full bg-lgrey desktop-hide">
   <div class="container">
     <div class="row">
-      <div class="col-6">Sort</div>
-      <div class="col-6 js-menu menu-toggle">Filter</div>
+      <div class="col-6 text-center"><i class="fas fa-sort"></i> Sort</div>
+      <div class="col-6 text-center js-menu menu-toggle"><i class="fas fa-sort"></i> Filter</div>
     </div>
+
+    {%assign custom_attributes = collection.metafields.global %}  
+          {%if custom_attributes.size > 0 %} 
+          {% for field in custom_attributes %} 
+             {% assign attribute_code = field | first %}        
+             {% assign attribute_value = field | last %}   
+            <div class="filter">
+               
+                  <select class="coll-filter">
+                    <option value="">{{ attribute_code }}</option>
+                    {% if current_tags contains attribute_value %}
+                    <option value="{{attribute_value}}" selected>{{attribute_value}}</option>
+                    {% else %}
+                    <option value="{{attribute_value}}">{{attribute_value}}</option>
+                     {% endif %}
+                  </select>
+            </div>
+        {% endfor %}   
+      {% endif %}
+
+
+
    
       <menu class="menu">
         <nav>
           <ul class="first-level">
-            <li class="close js-menu">Fermer</li>
+            <li class="close js-menu">Close</li>
             <li class="blue">
-              <a href="#">Vegetables</a>
+              <a href="#">Type</a>
               <ul class="second-level">
-                <li>
-                  <a href="#">Zucchini</a>
-                </li>
-                <li>
-                  <a href="#">Endive</a>
-                </li>
-                <li>
-                  <a href="#">Eggplant</a>
-                </li>
+                  {% for tag in collection.all_tags %} {% if current_tags contains tag %}
+                  <li class="active" data-tag="{{ tag | handle }}">{{ tag }}</li>
+                  {% else %}
+                  <li data-tag="{{ tag | handle }}">{{ tag }}</li>
+                  {% endif %} {% endfor %}
               </ul>
             </li>
             <li class="red">
-              <a href="#">Fruits</a>
+              <a href="#">Brand</a>
               <ul class="second-level">
-                <li>
-                  <a href="#">Banana</a>
-                </li>
-                <li>
-                  <a href="#">Apricot</a>
-                </li>
-              </ul>
+                {% for product_vendor in collection.all_vendors %}
+                 {% if current_tags contains product_vendor %}
+                 <li class="active" data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                 {% else %}
+                   <li data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                 {% endif %}{% endfor %}
+                  </ul>
             </li>
+            
+
+            {%assign custom_attributes = product.metafields.icons %}  
+                  {%if custom_attributes.size > 0 %} 
+                  {% for field in custom_attributes %} 
+                  {% assign attribute_code = field | first %}        
+                  {% assign attribute_value = field | last %}   
+                  {%if attribute_code == 'Mileage' or attribute_code == 'Condition' %} 
+                  <li class="red">
+                     <a href="#">{{ attribute_code }}</a>
+                        <ul class="second-level">
+                          <li>{{attribute_value}}</li>
+                        </ul>
+                   </li>
+                   {% endif %}
+                  {% endfor %}   
+                  {% endif %}
+      
+              
+                  </ul>
+            </li>
+
+             <li class="red">
+              <a href="#">Mileage</a>
+              <ul class="second-level">
+                {% for product_vendor in collection.all_vendors %}
+                 {% if current_tags contains product_vendor %}
+                 <li class="active" data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                 {% else %}
+                   <li data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                 {% endif %}{% endfor %}
+                </ul>
+            </li>
+            
           </ul>
         </nav>
       </menu>

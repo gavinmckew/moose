@@ -147,6 +147,9 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
 .h3:hover {
   transform: scale(1, 1) !important; }
 
+.text-center {
+  text-align: center; }
+
 /* -------------------
 /  ------- UNDER MENU
 /* ------------------- 
@@ -590,10 +593,6 @@ ul.megamenu.modern > li.with-sub-menu > a strong:after {
       margin-bottom: 30px; } }
 
 .menu-toggle {
-  padding: 25px;
-  background: #4e4e4e;
-  font-size: 12px;
-  text-transform: uppercase;
   cursor: pointer; }
 
 menu {
