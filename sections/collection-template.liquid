@@ -103,39 +103,7 @@
         {% endfor %}
       </div>
 
-    <script>
-      /* Product Tag Filters - Good for any number of filters on any type of collection pages */
-      const collFilters = document.querySelectorAll('.coll-filter');
-
-      if (collFilters.length > 0) {
-        collFilters.forEach((collFilter) => {
-          collFilter.addEventListener('change', function(){
-            var newTags = [];
-            collFilters.forEach((collFilter) => {
-              for(var i = 0; i <= collFilter.length-1; i++){
-                if(collFilter[i].selected == true && collFilter[i].value != "") {
-                  newTags.push(collFilter[i].value);
-                }
-              }
-            });
-
-            if (newTags.length) {
-              var query = newTags.join('+');
-              window.location.href = '/collections/{{ collection.handle }}/' + query;
-            }
-            else {
-              {% if collection.handle %}
-              window.location.href = '/collections/{{ collection.handle }}';
-              {% elsif collection.products.first.type == collection.title %}
-              window.location.href = '{{ collection.title | url_for_type }}';
-              {% elsif collection.products.first.vendor == collection.title %}
-              window.location.href = '{{ collection.title | url_for_vendor }}';
-              {% endif %}
-            }
-          });
-        });
-      }
-    </script>
+    
   </div>
 </div>
 
@@ -173,12 +141,12 @@
           <ul class="first-level">
             <li class="close js-menu">Close</li>
             <li class="blue">
-              <a href="#">Type</a>
+              <a href="#" class="active">Type</a>
               <ul class="second-level">
                   {% for tag in collection.all_tags %} {% if current_tags contains tag %}
-                  <li class="active" data-tag="{{ tag | handle }}">{{ tag }}</li>
+                  <li class="coll-filter-mob active" data-value="{{ tag | handle }}">{{ tag }}</li>
                   {% else %}
-                  <li data-tag="{{ tag | handle }}">{{ tag }}</li>
+                  <li class="coll-filter-mob" data-value="{{ tag | handle }}">{{ tag }}</li>
                   {% endif %} {% endfor %}
               </ul>
             </li>
@@ -187,16 +155,16 @@
               <ul class="second-level">
                 {% for product_vendor in collection.all_vendors %}
                  {% if current_tags contains product_vendor %}
-                 <li class="active" data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                 <li class="coll-filter-mob active" data-value="{{ product_vendor | handle }}">{{ product_vendor }}</li>
                  {% else %}
-                   <li data-tag="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                   <li class="coll-filter-mob" data-value="{{ product_vendor | handle }}">{{ product_vendor }}</li>
                  {% endif %}{% endfor %}
                   </ul>
             </li>
             
             {%- for product in collection.products -%}
             {%assign custom_attributes = product.metafields.icons %}  
-                  {%if custom_attributes.size > 0 %} 
+            {%if custom_attributes.size > 0 %} 
                   {% for field in custom_attributes %} 
                   {% assign attribute_code = field | first %}        
                   {% assign attribute_value = field | last %}   
@@ -212,16 +180,14 @@
                   {% endif %}
             {% endfor %} 
 
-            {%- for product in collection.products -%}
-              {% assign icons = product.metafields.icons %}
+            {%- for product in collection.products.metafields.icons -%}
+              {% assign icons = product %}
+               {% for icon in icons %}
+               {{ icon.name }}
+               {% endfor %} 
+            {% endfor %} 
 
-              {% for i in (1..icons.total-icons) %}
-                {% assign dummy = 'icons-' | append:i %}
-                {% assign icon = product.metafields[dummy] %}
-                {{ icon.name }}
-              {% endfor %}
-
-            {% endfor %}
+              
               
                   
 
@@ -233,6 +199,76 @@
       </menu>
   </div>
 </div>
+
+<script>
+      /* Product Tag Filters - Good for any number of filters on any type of collection pages */
+      const collFilters = document.querySelectorAll('.coll-filter');
+      const collFiltersmob = document.querySelectorAll('.coll-filter-mob');
+
+
+      if (collFilters.length > 0) {
+        collFilters.forEach((collFilter) => {
+          collFilter.addEventListener('change', function(){
+            var newTags = [];
+            collFilters.forEach((collFilter) => {
+              for(var i = 0; i <= collFilter.length-1; i++){
+                if(collFilter[i].selected == true && collFilter[i].value != "") {
+                  newTags.push(collFilter[i].value);
+                }
+              }
+            });
+
+            if (newTags.length) {
+              var query = newTags.join('+');
+              window.location.href = '/collections/{{ collection.handle }}/' + query;
+            }
+            else {
+              {% if collection.handle %}
+              window.location.href = '/collections/{{ collection.handle }}';
+              {% elsif collection.products.first.type == collection.title %}
+              window.location.href = '{{ collection.title | url_for_type }}';
+              {% elsif collection.products.first.vendor == collection.title %}
+              window.location.href = '{{ collection.title | url_for_vendor }}';
+              {% endif %}
+            }
+          });
+          });
+          collFiltersmob.forEach((collFiltermob) => {
+          collFiltermob.addEventListener('click', function(e){
+            var newTags = [];
+            e.preventDefault();
+            console.log('click');
+            collFiltersmob.forEach((collFiltermob) => {
+              for(var i = 0; i <= collFiltermob.length-1; i++){
+              console.log('loop');
+              console.log(collFiltermob[i].data('value'));
+                if(collFiltermob[i].data('value') != "") {
+                  newTags.push(collFiltermob[i].data('value'));
+                  collFiltermob[i].toggleClass('active');
+                  console.log(newTags);
+                }
+              }
+            });
+
+            if (newTags.length) {
+              var query = newTags.join('+');
+              //window.location.href = '/collections/{{ collection.handle }}/' + query;
+            }
+            else {
+              {% if collection.handle %}
+              //window.location.href = '/collections/{{ collection.handle }}';
+              {% elsif collection.products.first.type == collection.title %}
+              //window.location.href = '{{ collection.title | url_for_type }}';
+              {% elsif collection.products.first.vendor == collection.title %}
+              //window.location.href = '{{ collection.title | url_for_vendor }}';
+              {% endif %}
+            }
+          });
+        });
+      }
+
+      
+    </script>
 
 <div class="shopify-section col-12 col-md-12">
 <div class="container">
