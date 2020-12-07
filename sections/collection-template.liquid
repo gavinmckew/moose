@@ -144,9 +144,9 @@
               <a href="#" class="active">Type</a>
               <ul class="second-level">
                   {% for tag in collection.all_tags %} {% if current_tags contains tag %}
-                  <li class="coll-filter-mob active" data-value="{{ tag | handle }}">{{ tag }}</li>
+                  <li id="coll-filter-mob" class="coll-filter-mob active" data-vendor="{{ tag | handle }}">{{ tag }}</li>
                   {% else %}
-                  <li class="coll-filter-mob" data-value="{{ tag | handle }}">{{ tag }}</li>
+                  <li id="coll-filter-mob" class="coll-filter-mob" data-vendor="{{ tag | handle }}">{{ tag }}</li>
                   {% endif %} {% endfor %}
               </ul>
             </li>
@@ -155,9 +155,9 @@
               <ul class="second-level">
                 {% for product_vendor in collection.all_vendors %}
                  {% if current_tags contains product_vendor %}
-                 <li class="coll-filter-mob active" data-value="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                 <li id="coll-filter-mob" class="coll-filter-mob active" data-vendor="{{ product_vendor | handle }}">{{ product_vendor }}</li>
                  {% else %}
-                   <li class="coll-filter-mob" data-value="{{ product_vendor | handle }}">{{ product_vendor }}</li>
+                   <li id="coll-filter-mob" class="coll-filter-mob" data-vendor="{{ product_vendor | handle }}">{{ product_vendor }}</li>
                  {% endif %}{% endfor %}
                   </ul>
             </li>
@@ -172,7 +172,7 @@
                   <li class="red">
                      <a href="#">{{ attribute_code }}</a>
                         <ul class="second-level">
-                          <li>{{attribute_value}}</li>
+                          <li id="coll-filter-mob" data-vendor="{{ attribute_value | handle }}"">{{attribute_value}}</li>
                         </ul>
                    </li>
                    {% endif %}
@@ -204,6 +204,8 @@
       /* Product Tag Filters - Good for any number of filters on any type of collection pages */
       const collFilters = document.querySelectorAll('.coll-filter');
       const collFiltersmob = document.querySelectorAll('.coll-filter-mob');
+      var closeme = document.querySelectorAll('.js-menu');
+      var newTagsmob = [];
 
 
       if (collFilters.length > 0) {
@@ -235,37 +237,32 @@
           });
 
           collFiltersmob.forEach((collFiltermob) => {
-          collFiltermob.addEventListener('click', function(){
-            var newTagsmob = [];
-            collFiltersmob.forEach((collFiltermob) => {
-               console.log('clicked');
-               console.log('dataval:' + collFiltermob.dataset.value);
-               for(var i = 0; i <= collFiltermob.length; i++){
-                   console.log('dataval:' + collFiltermob[i].dataset.value);
-                    if(collFiltermob[i].data('value') != "") {
-                          newTagsmob.push(collFiltermob[i].dataset.value);
-                          collFiltermob[i].toggleClass('active');
-                          console.log(newTagsmob);
-                    }
-                }
-                console.log(newTagsmob);
-            });
+          collFiltermob.addEventListener('click', function(me){
+            
+            
+            
+            newTagsmob.push(this.dataset.vendor);
+              
+                   
+           closeme.addEventListener('click', function(me){
             if (newTagsmob.length) {
               var query = newTagsmob.join('+');
               console.log(query);
-              //window.location.href = '/collections/{{ collection.handle }}/' + query;
+              window.location.href = '/collections/{{ collection.handle }}/' + query;
             }
             else {
               {% if collection.handle %}
-              //window.location.href = '/collections/{{ collection.handle }}';
+              window.location.href = '/collections/{{ collection.handle }}';
               {% elsif collection.products.first.type == collection.title %}
-              //window.location.href = '{{ collection.title | url_for_type }}';
+              window.location.href = '{{ collection.title | url_for_type }}';
               {% elsif collection.products.first.vendor == collection.title %}
-              //window.location.href = '{{ collection.title | url_for_vendor }}';
+              window.location.href = '{{ collection.title | url_for_vendor }}';
               {% endif %}
             }
           });
           });
+          });
+          console.log(newTagsmob);
 
           
       }
